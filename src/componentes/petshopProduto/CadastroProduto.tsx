@@ -1,3 +1,4 @@
+
 import {  ChangeEvent, FormEvent, useState } from "react"
 import { useNavigate } from 'react-router-dom';
 function CadastroProduto(){
@@ -6,6 +7,7 @@ function CadastroProduto(){
     const [nome,setNome] = useState("")
     const [descricao,setDescricao] = useState("")
     const [preco,setPreco] = useState("")
+    const [data_producao,setData_producao] = useState("")
     const [imagem,setImagem] = useState("")
     async function handleForm(event:FormEvent){
         event.preventDefault()
@@ -20,6 +22,7 @@ function CadastroProduto(){
                     nome:nome,
                     descricao:descricao,
                     preco:preco,
+                    data_producao:data_producao,
                     imagem:imagem
                 })
             })
@@ -49,6 +52,9 @@ function CadastroProduto(){
     function handlePreco(event:ChangeEvent<HTMLInputElement>){
         setPreco(event.target.value)
     }
+    function handleData_producao(event:ChangeEvent<HTMLInputElement>){
+        setData_producao(event.target.value)
+    }
     function handleImagem(event:ChangeEvent<HTMLInputElement>){
         setImagem(event.target.value)
     }
@@ -67,6 +73,9 @@ function CadastroProduto(){
                 </div>
                 <div>
                     <input placeholder="Preço" type="text" name="preco" id="preco" onChange={handlePreco} />
+                </div>
+                <div>
+                    <input placeholder="Data_producao" type="text" name="data_producao" id="data_producao" onChange={handleData_producao} />
                 </div>
                 <div>
                     <input placeholder="URL Imagem" type="text" name="imagem" id="imagem" onChange={handleImagem} />
