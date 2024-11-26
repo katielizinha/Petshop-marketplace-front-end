@@ -1,4 +1,5 @@
 
+
 import {  ChangeEvent, FormEvent, useState } from "react"
 import { useNavigate } from 'react-router-dom';
 function CadastroProduto(){
@@ -38,7 +39,7 @@ function CadastroProduto(){
         catch(e){
             alert("Servidor não está respondendo.")
         }
-        
+       
     }
     function handleId(event:ChangeEvent<HTMLInputElement>){
         setId(event.target.value)
@@ -86,4 +87,6 @@ function CadastroProduto(){
     )
 }
 
+
 export default CadastroProduto
+

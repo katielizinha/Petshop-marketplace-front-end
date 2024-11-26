@@ -1,11 +1,11 @@
 {
-  "name": "petshop-marketplace-front-end",
- "private": true,
+  "name": "1022a-marketplace-front-end",
+  "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run build",
+    "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -28,5 +28,3 @@
     "vite": "^5.4.1"
   }
 }
-
-
