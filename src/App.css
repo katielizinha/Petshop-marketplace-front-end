@@ -1,94 +1,102 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
+
+/*Parte principal */
+body{
+    font-family: "Parkinsans", sans-serif;
+    font-weight: 600;
+    
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.logo{
+  font-family: "Coiny", system-ui;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.cabecalho{
+    background-color: #e455a8;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    z-index: 1000; 
+}
+
+.cabecalho ul{
+    display: flex;
+    flex-direction: row;
+    margin-left: 300px;
   }
-  to {
-    transform: rotate(360deg);
-  }
+
+.cabecalho li{
+    margin: 20px;
+    list-style-type: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.cabecalho li a{
+    color: white;
+    font-weight: 500;
+    font-size: 17px;
+    text-decoration: inherit;
 }
 
-.card {
-  padding: 2em;
+.cabecalho li:hover {
+    color: white;
 }
 
-.read-the-docs {
-  color: #888;
-}
 
-.produtos-container{
-  display: flex;
-  gap: 20px;
-}
-.produto-item{
-  width: 300px;
-  border: 1px solid #f0f0f0;
-  padding: 15px 20px;
-  box-sizing: border-box;
-  box-shadow: 0px 0px 12px 2px rgb(195, 195, 195);
-}
-.container-imagem{
-  height: 300px;
-  overflow: hidden;
-}
-.produto-item>.container-imagem>img{
-  width: 100%;
-}
-
-.usuarios-container{
-  display: flex;
-  gap: 20px;
-  
-}
-
-.usuario-item{
-  width: 300px;
-  border: 1px solid #f0f0f0;
-  padding: 15px 20px;
-  box-sizing: border-box;
-  box-shadow: 0px 0px 12px 2px rgb(195, 195, 195);
-}
-
-/*Funcionarios */
+/*Página dos Funcionários*/
 .funcionarios-container{
-  display: flex;
-  gap: 20px;
-}
-.funcionario-item{
-  width: 300px;
-  border: 1px solid #f0f0f0;
-  padding: 15px 20px;
-  box-sizing: border-box;
-  box-shadow: 0px 0px 12px 2px rgb(195, 195, 195);
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    text-align: center; /* Centraliza o texto */
 }
 
+.titulo-funcionario{
+    color: #ce338d;
+    font-size: 55px;
+    font-weight: 700;
+}
 
+.funcionarios-list {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; 
+    justify-content: center; 
+    gap: 30px; 
+    margin-bottom: 60px;
+}
 
+.foto-funcionario {
+    height: 125px;
+    border-radius: 120vmin;
+}
 
+.funcionario-nome{
+    color: #ce338d;
+    font-size: 35px;
+}
 
+.funcionario-item p{
+    margin: 3px;
+    font-size: 17px;
+    color: rgb(58, 58, 58);
+    align-items: right;
+}
 
+.funcionario-item a{
+    color: #ce338d;
+    
+}

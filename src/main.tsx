@@ -1,7 +1,9 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
+import FuncionariosApp from './funcionarios.tsx'
 import './index.css'
+
 import {
   createBrowserRouter,
   RouterProvider,
@@ -15,6 +17,14 @@ const router = createBrowserRouter([
   {
     path: "/cadastro-produto",
     element: <CadastroProduto/>,
+  },
+  {
+    path: "/funcionarios",
+    element: <FuncionariosApp/>,
+  },
+  {
+    path: "/produtos",
+    element: <App/>,
   },
 ]);
 
