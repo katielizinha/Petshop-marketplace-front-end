@@ -7,8 +7,8 @@ type ProdutoType = {
   id: number,
   nome: string,
   preco: string,
-  data_producao: string,
   descricao: string,
+  data_producao: string,
   imagem: string
 }
 
@@ -53,32 +53,40 @@ function App() {
       </header>
       {/* Listagem de Produtos */}
       <div className="produtos-container">
-        <h1 className='titulo-produto'>Produtos</h1>
+        <h1 className="titulo-produto">Produtos Catshop</h1>
         <div className="produtos-list">
-          {
-            produtos.map(produto => (
-              <div key={produto.id} className="produto-item">
-                <h3 className="produto-nome">{produto.nome}</h3> {/* Use h3 para o nome do produto */}
-                <div className='container-imagem'>
-                  <img src={produto.imagem} alt="Imagem do produto" />
-                </div>
-                <p className="produto-preco">{produto.preco}</p>
-                <p className="produto-data_producao">{produto.data_producao}</p>
-                <p className="produto-descricao">{produto.descricao}</p>
+          {produtos.map((produto) => (
+            <div key={produto.id} className="produto-item">
+              <div className="container-imagem">
+                <img src={produto.imagem} alt={`Imagem de ${produto.nome}`} />
+              </div>
+              <h3 className="produto-nome">{produto.nome}</h3>
+              <p className="produto-descricao">{produto.descricao}</p>
+              <p className="produto-data_producao">
+                {/* Formatação da data */}
+                {new Date(produto.data_producao).toLocaleDateString("pt-BR", {
+                  day: "2-digit",
+                  month: "2-digit",
+                  year: "numeric",
+                })}
+              </p>
+              <div className="produto-preco-botao">
+                <span className="produto-preco">R$ {produto.preco}</span>
                 <button className="botao-comprar">Comprar</button>
               </div>
-            ))
-          }
+            </div>
+          ))}
+        </div>
+
+        {/* Botão estilizado com Link */}
+        <div className="link-cadastro-container">
+          <Link to="/cadastro-produto" className="link-cadastro">
+            Cadastrar Produtos
+          </Link>
         </div>
       </div>
-      <li>
-        <Link to="/cadastro-produto">Cadastrar Produtos</Link>  {/**No lugar do "a href" use o componente LINK */}
-      </li>
-      
-
-      
     </>
-  )
+  );
 }
 
-export default App
+export default App;

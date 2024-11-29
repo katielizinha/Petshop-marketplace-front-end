@@ -100,3 +100,267 @@ body{
     color: #ce338d;
     
 }
+/*Produtos*/
+@media (max-width: 768px) {
+    .produtos-list {
+      grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas menores */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .produtos-list {
+      grid-template-columns: repeat(1, 1fr); /* 1 coluna em telas muito pequenas */
+    }
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 100vh; /* Altura total da tela */
+    background-color: #f8e6f3 !important; /* Fundo mais claro, se necessário */
+  }
+  
+  .produtos-container {
+    display: flex;
+    flex-direction: column; /* Organiza o título e os produtos em coluna */
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    min-height: 100vh; /* Ocupa a altura inteira da tela */
+    text-align: center; /* Alinha o texto no centro */
+  }
+  
+  .titulo-produto {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 35px; /* Espaçamento entre o título e os quadrados */
+    color: #e455a8; /* Ajuste de cor */
+  }
+  
+  .produtos-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Sempre 3 colunas por linha */
+    gap: 20px; /* Espaçamento entre os itens */
+    justify-content: center; /* Centraliza horizontalmente */
+    width: 100%; /* O grid ocupa toda a largura disponível */
+    max-width: 1000px; /* Limita a largura máxima do grid */
+  }
+  
+  .produto-item {
+    display: flex;
+    flex-direction: column; /* Organiza os itens do produto em coluna */
+    justify-content: space-between; /* Garante espaçamento uniforme */
+    align-items: stretch; /* Faz os elementos ocuparem a largura total */
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: center;
+    height: 100%; /* Garante que todos os itens tenham a mesma altura */
+    border-radius: 10px; /* Adiciona bordas arredondadas */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  }
+  
+  .container-imagem img {
+    width: 100%;
+    height: auto;
+    max-height: 200px; /* Limita a altura da imagem */
+    object-fit: contain; /* Garante que a imagem se ajuste ao container */
+  }
+  
+  .produto-nome {
+    font-size: 1.1rem; /* Tamanho um pouco maior */
+    text-align: left;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .produto-descricao {
+    font-size: 1rem; /* Tamanho ajustado */
+    text-align: left;
+    color: #555; /* Cor mais escura para maior contraste */
+    margin-bottom: 15px;
+    line-height: 1.4; /* Espaçamento entre linhas para melhor leitura */
+  }
+  
+  .produto-data_producao {
+    font-size: 0.9rem; /* Tamanho consistente com a descrição */
+    text-align: left;
+    color: #999; /* Cor mais clara para destacar menos */
+    margin-bottom: 15px;
+  }
+  
+  /* Estilizar preço e botão lado a lado */
+  .produto-preco-botao {
+    display: flex;
+    justify-content: space-between; /* Espaça o preço e o botão lado a lado */
+    align-items: center; /* Alinha verticalmente */
+    margin-top: auto; /* Empurra o bloco para o final do contêiner */
+    gap: 10px;
+  }
+  
+  .produto-preco {
+    font-size: 1.2rem; /* Tamanho menor do preço */
+    font-weight: bold;
+    color: #e455a8;
+  }
+  
+  .botao-comprar {
+    padding: 10px;
+    font-size: 1rem;
+    width: auto; /* Remove restrição de largura fixa */
+    max-width: 120px;
+    border-radius: 10px;
+    background-color: #e455a8;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .botao-comprar:hover {
+    background-color: #c60877;
+  }
+  
+  .link-cadastro-container {
+    margin-top: 30px;
+  }
+  
+  .link-cadastro {
+    font-size: 1rem;
+    max-width: 120px;
+    border-radius: 10px;
+    background-color: #e455a8;
+    color: white !important; /* Força o texto branco */
+    cursor: pointer;
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    text-align: center; /* Centraliza o texto */
+  }
+  
+  .link-cadastro:hover {
+    background-color: #c60877;
+  }
+/*Cadatro Produtos*/
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Mensagem central fixa */
+  .mensagem {
+    position: fixed; /* Fixa no topo da tela */
+    top: 80px; /* Ajusta a distância do topo */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-weight: bold;
+    color: #e455a8;
+    font-size: 6vmin; /* Tamanho adaptável */
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Container principal */
+  .container {
+    display: flex;
+    width: 100vw; /* Largura total */
+    height: 100vh; /* Altura total */
+    justify-content: center;
+    
+  }
+  
+  /* Lado esquerdo */
+  .left {
+    width: 100%; /* Metade da tela */
+    background-color: #ffffff; /* Fundo branco */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .left img {
+    max-width: 70%; /* Ajusta imagem */
+    height: auto;
+  }
+  
+  /* Lado direito */
+  .right {
+    width: 98%; /* Outra metade */
+    background-color: #ffffff; /* Fundo branco */
+    display: flex;
+    align-items: center;
+    padding-left: 157px; /* Adiciona espaço interno à esquerda */
+    
+    
+  }
+  
+  /* Estilização do formulário */
+  .form-container {
+    width: 48%; /* Ajusta largura do formulário */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(176, 0, 97, 0.15);
+    background-color: #fcf4fa;
+    height: 550px; /* Defina a altura fixa que preferir */
+    padding: 40px;
+    
+   
+  }
+  
+  .form-container h1 {
+    color: #e455a8;
+    margin-bottom: 25px; /* Reduzir o espaçamento inferior */
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1px; /* Reduz o espaçamento entre os campos */
+  }
+  
+  .form-container input[type="text"],
+  .form-container input[type="date"],
+  .form-container input[type="submit"] {
+    font-weight: bold;
+    color: #847272; /* Cor do texto */
+    position: relative;
+    width: 100%;
+    padding: 9px; /* Reduz a altura dos campos */
+    font-size: 1rem;
+    border: 1px solid #e455a8;
+    border-radius: 30px;
+    line-height: 1.8;/* Aumenta a altura da linha */
+    margin: 0 auto 10px auto;  /* Centraliza o campo e dá um espaçamento na parte inferior */
+    width: 90%; /* A largura será 80% do seu contêiner pai */
+  }
+  .form-container input[type="date"]:focus,
+  .form-container input[type="text"]:focus{
+    border-color: #e455a8;
+    outline: none;
+    box-shadow: 0 0 5px rgba(146, 11, 114, 0.5);
+  }
+  
+  .form-container input[type="submit"] {
+    font-size: 1rem;
+    max-width: 120px;
+    border-radius: 20px;
+    background-color: #e455a8;
+    color: white !important; /* Força o texto branco */
+    cursor: pointer;
+    display: block; /* Necessário para o margin funcionar */
+    margin-left: auto; /* Centraliza horizontalmente */
+    margin-right: auto; /* Centraliza horizontalmente */
+    margin-top: 10px;
+  }
+  
+  .form-container input[type="submit"]:hover {
+    background-color: #c60877;
+  }
+  

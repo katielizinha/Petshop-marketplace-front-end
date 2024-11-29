@@ -1,6 +1,6 @@
 
 
-import {  ChangeEvent, FormEvent, useState } from "react"
+import { FormEvent, useState } from "react"
 import { useNavigate } from 'react-router-dom';
 function CadastroProduto(){
     const navigate = useNavigate()
@@ -39,54 +39,80 @@ function CadastroProduto(){
         catch(e){
             alert("Servidor não está respondendo.")
         }
-       
     }
-    function handleId(event:ChangeEvent<HTMLInputElement>){
-        setId(event.target.value)
-    }
-    function handleNome(event:ChangeEvent<HTMLInputElement>){
-        setNome(event.target.value)
-    }
-    function handleDescricao(event:ChangeEvent<HTMLInputElement>){
-        setDescricao(event.target.value)
-    }
-    function handlePreco(event:ChangeEvent<HTMLInputElement>){
-        setPreco(event.target.value)
-    }
-    function handleData_producao(event:ChangeEvent<HTMLInputElement>){
-        setData_producao(event.target.value)
-    }
-    function handleImagem(event:ChangeEvent<HTMLInputElement>){
-        setImagem(event.target.value)
-    }
-    return(
+    return (
         <>
-            <h1>Meu Componente de Cadastro de Produtos</h1>
-            <form onSubmit={handleForm}>
-                <div>
-                    <input placeholder="Id" type="text" name="id" id="id" onChange={handleId} />
-                </div>
-                <div>
-                    <input placeholder="Nome" type="text" name="nome" id="nome" onChange={handleNome} />
-                </div>
-                <div>
-                    <input placeholder="Descrição" type="text" name="descricao" id="descricao" onChange={handleDescricao} />
-                </div>
-                <div>
-                    <input placeholder="Preço" type="text" name="preco" id="preco" onChange={handlePreco} />
-                </div>
-                <div>
-                    <input placeholder="Data_producao" type="text" name="data_producao" id="data_producao" onChange={handleData_producao} />
-                </div>
-                <div>
-                    <input placeholder="URL Imagem" type="text" name="imagem" id="imagem" onChange={handleImagem} />
-                </div>
-                <input type="submit" value="Cadastrar" />
-            </form>
+          {/* Mensagem de boas-vindas */}
+          <div className="mensagem">Bem-vindo de volta!</div>
+    
+          {/* Contêiner do formulário e imagem */}
+          <div className="container">
+            {/* Lado esquerdo */}
+            <div className="left">
+              <img
+                src="https://www.castrabus.com.br/uploads/blog_posts/3/thumb-800-0/a67470ab30e987abc9e559231ac36389.png"
+                alt="Ilustração"
+              />
+            </div>
+    
+            {/* Lado direito */}
+            <div className="right">
+              <div className="form-container">
+                <h1>Cadastro de Produtos</h1>
+                <form onSubmit={handleForm}>
+                  <input
+                    placeholder="ID"
+                    type="text"
+                    name="id"
+                    id="id"
+                    onChange={(e) => setId(e.target.value)}
+                  />
+                  <input
+                    placeholder="Nome"
+                    type="text"
+                    name="nome"
+                    id="nome"
+                    onChange={(e) => setNome(e.target.value)}
+                  />
+                  <input
+                    placeholder="Descrição"
+                    type="text"
+                    name="descricao"
+                    id="descricao"
+                    onChange={(e) => setDescricao(e.target.value)}
+                  />
+                  <input
+                    placeholder="Preço"
+                    type="text"
+                    name="preco"
+                    id="preco"
+                    onChange={(e) => setPreco(e.target.value)}
+                  />
+                  <input
+                    type="date"
+                    name="data_producao"
+                    id="data_producao"
+                    value={data_producao}
+                    onChange={(e) => setData_producao(e.target.value)}
+                    placeholder="Data Produção"
+                  />
+                
+                  <input
+                    placeholder="URL da Imagem"
+                    type="text"
+                    name="imagem"
+                    id="imagem"
+                    onChange={(e) => setImagem(e.target.value)}
+                  />
+                  <input type="submit" value="Cadastrar" />
+                </form>
+              </div>
+            </div>
+          </div>
         </>
-    )
-}
-
-
-export default CadastroProduto
-
+      );
+    }
+    
+    
+    export default CadastroProduto;
+    
