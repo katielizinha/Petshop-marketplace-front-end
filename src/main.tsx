@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import FuncionariosApp from './funcionarios.tsx'
+import Donos from './donos.tsx'
 import './index.css'
 
 import {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: "/produtos",
     element: <App/>,
+  },
+  {
+    path: "/donos",
+    element: <Donos/>,
   },
 ]);
 

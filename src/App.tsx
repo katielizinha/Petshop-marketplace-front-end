@@ -42,7 +42,7 @@ function App() {
                   <Link to="/funcionarios">Funcionarios</Link>  {/**No lugar do "a href" use o componente LINK */}
               </li>
               <li><a href="#contato">Marcar consultos</a></li>
-              <li><a href="#contato">Cadastro</a></li>
+              <li><Link to="/donos">Donos</Link></li>
 
             </ul>
           </nav>
