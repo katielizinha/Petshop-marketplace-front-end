@@ -1,6 +1,6 @@
-/* Página dos Donos */
+/* Página da Consulta */
 
-.donos-container {
+.tipoConsulta-container {
     margin-top: 120px;
     display: flex;
     flex-direction: column;
@@ -16,26 +16,11 @@
     font-size: 55px;
     font-weight: 700;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+
 }
 
-.link-cadastro-container {
-    margin-top: 30px;
-  }
-  
-  .link-cadastro {
-    font-size: 1rem;
-    max-width: 120px;
-    border-radius: 10px;
-    background-color: #e455a8;
-    color: white !important; /* Força o texto branco */
-    cursor: pointer;
-    padding: 10px;
-    display: block;
-    text-decoration: none;
-    text-align: center; /* Centraliza o texto */
-  }
 
-.donos-list {
+.consulta-list {
     margin-top: 40px;
     display: flex;
     flex-wrap: wrap;
@@ -45,7 +30,7 @@
 
 }
 
-.donos-item {
+.consulta-item {
     background-color: #f9f9f9;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
@@ -57,13 +42,13 @@
 
 }
 
-.donos-item:hover {
+.consulta-item:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 
 }
 
-.donos-nome {
+.consulta-nome {
     color: #ce338d;
     font-size: 25px;
     font-weight: bold;
@@ -71,13 +56,13 @@
 
 }
 
-.donos-item p {
+.consulta-item p {
     margin: 5px 0;
     font-size: 16px;
     color: rgb(58, 58, 58);
 }
 
-.donos-item a {
+.consulta-item a {
     color: #ce338d;
     text-decoration: none;
     font-weight: bold;
@@ -86,7 +71,7 @@
     transition: color 0.3s;
 }
 
-.donos-item a:hover {
+.consulta-item a:hover {
     color: #9d2465;
 
 }

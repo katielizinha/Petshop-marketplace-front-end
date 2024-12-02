@@ -1,5 +1,5 @@
 
-
+import { Link } from "react-router-dom";
 import { FormEvent, useState } from "react"
 import { useNavigate } from 'react-router-dom';
 function CadastroProduto(){
@@ -42,6 +42,26 @@ function CadastroProduto(){
     }
     return (
         <>
+          <header className="site-header">
+
+<div className="cabecalho"> 
+  <div className="logo">CatShop</div>
+  <nav className="navigation">
+    <ul>
+      <li><a href="#produtos">Produtos</a></li>
+      <li>
+          <Link to="/funcionarios">Funcionários</Link>  {/**No lugar do "a href" use o componente LINK */}
+      </li>
+      <li><a href="#contato">Marcar consultas</a></li>
+      <li><Link to="/donos">Donos</Link></li>
+      <li><Link to="/animais">Animais</Link></li>
+    </ul>
+  </nav>
+</div>
+<div className="header-actions">
+  <button className="login-button">Login</button>
+</div>
+</header>
           {/* Mensagem de boas-vindas */}
           <div className="mensagem">Bem-vindo de volta!</div>
     

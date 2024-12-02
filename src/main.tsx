@@ -31,6 +31,10 @@ const router = createBrowserRouter([
     path: "/donos",
     element: <Donos/>,
   },
+  {
+    path: "/cadastro-dono",
+    element: <CadastroDonos/>,
+  },
 ]);
 
 createRoot(document.getElementById('root')!).render(
