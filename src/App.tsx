@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import { Link } from "react-router-dom";
 
-// Tipo para produtos
+// Tipo para produto
+// teste do commit
 type ProdutoType = {
   id: number,
   nome: string,
