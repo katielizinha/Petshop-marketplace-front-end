@@ -1,6 +1,5 @@
-/* Página da Consulta */
-
-.tipoConsulta-container {
+/* Página dos Animais */
+.animais-container {
     margin-top: 120px;
     display: flex;
     flex-direction: column;
@@ -8,29 +7,28 @@
     justify-content: center;
     text-align: center;
     font-family: 'Arial', sans-serif;
-
 }
 
-.titulo-donos {
+
+.titulo-animal {
     color: #ce338d;
     font-size: 55px;
     font-weight: 700;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-
 }
 
 
-.consulta-list {
+.animais-list {
     margin-top: 40px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
     margin-bottom: 60px;
-
 }
 
-.consulta-item {
+
+.animal-item {
     background-color: #f9f9f9;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
@@ -39,30 +37,41 @@
     width: 280px;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
-
 }
 
-.consulta-item:hover {
+
+.animal-item:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-
 }
 
-.consulta-nome {
+
+.foto-animal {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 3px solid #ce338d;
+}
+
+
+.animal-nome {
     color: #ce338d;
     font-size: 25px;
     font-weight: bold;
     margin: 10px 0;
-
 }
 
-.consulta-item p {
+
+.animal-item p {
     margin: 5px 0;
     font-size: 16px;
     color: rgb(58, 58, 58);
 }
 
-.consulta-item a {
+
+.animal-item a {
     color: #ce338d;
     text-decoration: none;
     font-weight: bold;
@@ -71,7 +80,9 @@
     transition: color 0.3s;
 }
 
-.consulta-item a:hover {
-    color: #9d2465;
 
+.animal-item a:hover {
+    color: #9d2465;
 }
+   
+

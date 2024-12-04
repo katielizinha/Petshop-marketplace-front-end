@@ -1,0 +1,73 @@
+/* Página da Consulta */
+
+.tipoConsulta-container {
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+
+}
+
+.titulo-consulta {
+    color: #ce338d;
+    font-size: 55px;
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+.consulta-list {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 60px;
+
+}
+
+.consulta-item {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.consulta-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.consulta-tipoConsulta{
+    color: #ce338d;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.consulta-item p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: rgb(58, 58, 58);
+}
+
+.consulta-item a {
+    color: #ce338d;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    display: inline-block;
+    transition: color 0.3s;
+}
+
+.consulta-item a:hover {
+    color: #9d2465;
+
+}

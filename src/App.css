@@ -212,11 +212,12 @@
     padding: 40px;
     margin-top:10vmin;
 
+
   }
   
   .form-container h1 {
     color: #e455a8;
-    margin-bottom: 10px; /* Reduzir o espaçamento inferior */
+    margin-bottom: 5px; /* Reduzir o espaçamento inferior */
     text-align: center;
     font-weight: bold;
   }
@@ -234,7 +235,6 @@
     color: #847272; /* Cor do texto */
     position: relative;
     width: 100%;
-    padding: 9px; /* Reduz a altura dos campos */
     font-size: 1rem;
     border: 1px solid #e455a8;
     border-radius: 30px;

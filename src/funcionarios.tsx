@@ -26,25 +26,20 @@ function FuncionariosApp() {
 
   return (
     <>
-
-      <header className="site-header">
+    <header className="site-header">
           <div className="cabecalho"> 
             <div className="logo">CatShop</div>
             <nav className="navigation">
               <ul>
-                <li><a href="#produtos">Produtos</a></li>
-                <li><a href="#sobre">Sobre</a></li>
+              <li><Link to="/produtos">Produtos</Link></li>
                 <li>
                     <Link to="/funcionarios">Funcionários</Link>  {/**No lugar do "a href" use o componente LINK */}
                 </li>
-                <li><a href="#contato">Marcar consultas</a></li>
+                <li><Link to="/consulta">Marcar Consultas</Link></li>
                 <li><Link to="/donos">Donos</Link></li>
                 <li><Link to="/animais">Animais</Link></li>
               </ul>
             </nav>
-          </div>
-          <div className="header-actions">
-            <button className="login-button">Login</button>
           </div>
       </header>
      

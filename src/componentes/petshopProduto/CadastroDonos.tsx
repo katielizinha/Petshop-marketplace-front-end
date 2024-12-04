@@ -55,7 +55,7 @@ function CadastroDonos() {
                 {/* Lado esquerdo */}
                 <div className="left">
                     <img
-                        src="https://www.castrabus.com.br/uploads/blog_posts/3/thumb-800-0/a67470ab30e987abc9e559231ac36389.png"
+                        src="https://static.vecteezy.com/system/resources/thumbnails/037/749/711/small_2x/ai-generated-dog-and-cat-on-transparent-background-free-png.png"
                         alt="Ilustração"
                     />
                 </div>
@@ -102,7 +102,7 @@ function CadastroDonos() {
                                 placeholder="Data de Cadastro"
                             />
                             <input
-                               placeholder="URL da Imagem"
+                               placeholder="Foto do Dono"
                                type="text"
                                name="imagem"
                                id="imagem"

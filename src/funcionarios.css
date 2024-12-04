@@ -63,12 +63,12 @@ body{
 
 .titulo-funcionario{
     color: #ce338d;
-    font-size: 55px;
+    font-size: 6vmin;
     font-weight: 700;
 }
 
 .funcionarios-list {
-    margin-top: 40px;
+    margin-top: 7vmin;
     display: flex;
     flex-direction: row;
     align-items: flex-start; 
@@ -78,23 +78,24 @@ body{
 }
 
 .foto-funcionario {
-    height: 125px;
-    border-radius: 120vmin;
+    width: 35vmin !important;
+    border-radius: 50vmin !important; /* Define a imagem como redonda */
 }
 
 .funcionario-nome{
     color: #ce338d;
-    font-size: 35px;
+    font-size: 4.5vmin;
 }
 
 .funcionario-item p{
-    margin: 3px;
-    font-size: 17px;
+    margin: 1vmin;
+    font-size: 2vmin;
     color: rgb(58, 58, 58);
     align-items: right;
 }
 
 .funcionario-item a{
     color: #ce338d;
-    
+    font-size: 2vmin;
+
 }
