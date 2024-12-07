@@ -157,7 +157,7 @@
   /* Mensagem central fixa */
   .mensagem {
     position: fixed; /* Fixa no topo da tela */
-    top: 110px; /* Ajusta a distância do topo */
+    top: 200px; /* Ajusta a distância do topo */
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
@@ -204,11 +204,11 @@
   
   /* Estilização do formulário */
   .form-container {
-    width: 60%; /* Ajusta largura do formulário */
+    width: 51%; /* Ajusta largura do formulário */
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(176, 0, 97, 0.15);
     background-color: #fcf4fa;
-    height: 550px; /* Defina a altura fixa que preferir */
+    height: 740px; /* Defina a altura fixa que preferir */
     padding: 40px;
     margin-top:10vmin;
 
@@ -217,7 +217,7 @@
   
   .form-container h1 {
     color: #e455a8;
-    margin-bottom: 5px; /* Reduzir o espaçamento inferior */
+    margin-bottom: 50px; /* Reduzir o espaçamento inferior */
     text-align: center;
     font-weight: bold;
   }
@@ -225,33 +225,39 @@
   .form-container form {
     display: flex;
     flex-direction: column;
-    gap: 1px; /* Reduz o espaçamento entre os campos */
+    gap: 5px; /* Reduz o espaçamento entre os campos */
+
   }
   
   .form-container input[type="text"],
-  .form-container input[type="date"],
-  .form-container input[type="submit"] {
+.form-container input[type="date"],
+.form-container input[type="submit"] {
     font-weight: bold;
     color: #847272; /* Cor do texto */
-    position: relative;
-    width: 100%;
+    width: 90%; /* Ajusta a largura */
     font-size: 1rem;
     border: 1px solid #e455a8;
     border-radius: 30px;
-    line-height: 1.8;/* Aumenta a altura da linha */
-    margin: 0 auto 10px auto;  /* Centraliza o campo e dá um espaçamento na parte inferior */
-    width: 90%; /* A largura será 80% do seu contêiner pai */
-  }
-  .form-container input[type="date"]:focus,
-  .form-container input[type="text"]:focus{
+    line-height: 4; /* Alinha o tamanho do campo com os outros */
+    margin: 0 auto 10px auto; /* Centraliza o campo */
+    padding-left: 20px; /* Ajusta o espaçamento interno */
+}
+
+.form-container input[type="text"]:focus {
     border-color: #e455a8;
     outline: none;
     box-shadow: 0 0 5px rgba(146, 11, 114, 0.5);
-  }
-  
+}
+
+input[type="date"] {
+  appearance: none; /* Remove estilo padrão */
+  font-size: 16px;
+  border-radius: 30px;
+  margin-left:50vmin ;
+}
+
   .form-container input[type="submit"] {
-    font-size: 1rem;
-    max-width: 120px;
+    max-width: 150px;
     border-radius: 20px;
     background-color: #e455a8;
     color: white !important; /* Força o texto branco */
