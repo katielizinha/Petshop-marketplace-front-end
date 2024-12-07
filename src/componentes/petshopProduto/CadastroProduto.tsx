@@ -68,83 +68,88 @@ function CadastroProduto() {
           <div className="logo">CatShop</div>
           <nav className="navigation">
             <ul>
-              <li><a href="#produtos">Produtos</a></li>
+            <li>
+                <Link to="/produtos">Produtos</Link>
+              </li>
               <li>
                 <Link to="/funcionarios">Funcionários</Link>
               </li>
-              <li><a href="#contato">Marcar consultas</a></li>
+              <li>
+                <Link to="/consulta">Marcar consultas</Link>
+              </li>
               <li><Link to="/donos">Donos</Link></li>
               <li><Link to="/animais">Animais</Link></li>
             </ul>
           </nav>
         </div>
-        <div className="header-actions">
-          <button className="login-button">Login</button>
-        </div>
       </header>
-      <div className="mensagem">Bem-vindo de volta!</div>
-      <div className="container">
-        <div className="left">
-          <img
-            src="https://www.castrabus.com.br/uploads/blog_posts/3/thumb-800-0/a67470ab30e987abc9e559231ac36389.png"
-            alt="Ilustração"
-          />
-        </div>
-        <div className="right">
-          <div className="form-container">
-            <h1>Cadastro de Produtos</h1>
-            <form onSubmit={handleForm}>
-              <input
-                placeholder="ID"
-                type="text"
-                name="id"
-                id="id"
-                onChange={(e) => setId(e.target.value)}
-              />
-              <input
-                placeholder="Nome"
-                type="text"
-                name="nome"
-                id="nome"
-                onChange={(e) => setNome(e.target.value)}
-              />
-              <input
-                placeholder="Descrição"
-                type="text"
-                name="descricao"
-                id="descricao"
-                onChange={(e) => setDescricao(e.target.value)}
-              />
-              <input
-                placeholder="Preço"
-                type="text"
-                name="preco"
-                id="preco"
-                onChange={(e) => setPreco(e.target.value)}
-              />
-              <input
-                placeholder="Data de Produção"
-                type="text"
-                name="data_producao"
-                id="data_producao"
-                value={data_producao}
-                onChange={handleDataChange}
-                maxLength={10} // Limita a 10 caracteres
-                pattern="\d{2}/\d{2}/\d{4}" // Avisa que o formato é dd/mm/yyyy
-                required
-              />
-              <input
-                placeholder="URL da Imagem"
-                type="text"
-                name="imagem"
-                id="imagem"
-                onChange={(e) => setImagem(e.target.value)}
-              />
-              <input type="submit" value="Cadastrar" />
-            </form>
+
+      
+      <div className="container-cadastro-produto">
+       <h1 className="titulo-produto">Bem-vindo de volta!</h1>
+       <div className="cadastro-produto-list">
+          <div className="left-cadastro-produto">
+            <img
+              src="https://imagensemoldes.com.br/wp-content/uploads/2020/09/Imagem-Cachorro-e-Gato-PNG.png"
+              alt="Ilustração"
+            />
           </div>
+          <div className="right-cadastro-produto">
+            <div className="form-container-produto">
+              <h1>Cadastro de Produtos</h1>
+              <form onSubmit={handleForm}>
+                <input
+                  placeholder="ID"
+                  type="text"
+                  name="id"
+                  id="id"
+                  onChange={(e) => setId(e.target.value)}
+                />
+                <input
+                  placeholder="Nome"
+                  type="text"
+                  name="nome"
+                  id="nome"
+                  onChange={(e) => setNome(e.target.value)}
+                />
+                <input
+                  placeholder="Descrição"
+                  type="text"
+                  name="descricao"
+                  id="descricao"
+                  onChange={(e) => setDescricao(e.target.value)}
+                />
+                <input
+                  placeholder="Preço"
+                  type="text"
+                  name="preco"
+                  id="preco"
+                  onChange={(e) => setPreco(e.target.value)}
+                />
+                <input
+                  placeholder="Data de Produção"
+                  type="text"
+                  name="data_producao"
+                  id="data_producao"
+                  value={data_producao}
+                  onChange={handleDataChange}
+                  maxLength={10} // Limita a 10 caracteres
+                  pattern="\d{2}/\d{2}/\d{4}" // Avisa que o formato é dd/mm/yyyy
+                  required
+                />
+                <input
+                  placeholder="URL da Imagem"
+                  type="text"
+                  name="imagem"
+                  id="imagem"
+                  onChange={(e) => setImagem(e.target.value)}
+                />
+                <input className="botao-enviar-produto" type="submit" value="Cadastrar" />
+              </form>
+            </div>
         </div>
       </div>
+      </div> 
     </>
   );
 }

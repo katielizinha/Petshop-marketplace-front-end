@@ -1,92 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
+
+
 /* Página dos Donos */
 
+
+
 .donos-container {
-    margin-top: 120px;
+    margin-top: 15vmin;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-family: 'Arial', sans-serif;
-
 }
 
 .titulo-donos {
     color: #ce338d;
-    font-size: 55px;
+    font-size: 8vmin;
     font-weight: 700;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
-
-.link-cadastro-container {
-    margin-top: 30px;
-  }
   
-  .link-cadastro {
-    font-size: 1rem;
-    max-width: 120px;
-    border-radius: 10px;
+.link-cadastro-donos {
+    font-size: 3vmin;
+    border-radius: 2vmin;
     background-color: #e455a8;
     color: white !important; /* Força o texto branco */
     cursor: pointer;
-    padding: 10px;
+    padding: 3vmin;
     display: block;
     text-decoration: none;
     text-align: center; /* Centraliza o texto */
+}
+
+.link-cadastro-donos:hover {
+    background-color: #c60877;
   }
 
-.donos-list {
-    margin-top: 40px;
+.donos-list{
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
-    margin-bottom: 60px;
-
+    align-items: center;
+    gap: 5vmin;
+    margin-bottom: 5vmin;
 }
 
 .donos-item {
     background-color: #f9f9f9;
     border: 1px solid #e0e0e0;
-    border-radius: 8px;
+    border-radius: 2vmin;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 280px;
+    width: 40vmin;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
-
 }
 
 .donos-item:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-
 }
 
 .donos-nome {
     color: #ce338d;
-    font-size: 25px;
+    font-size: 3.5vmin;
     font-weight: bold;
-    margin: 10px 0;
-
 }
 
 .donos-item p {
-    margin: 5px 0;
-    font-size: 16px;
+    margin: 1vmin;
+    font-size: 2.5vmin;
     color: rgb(58, 58, 58);
 }
 
-.donos-item a {
-    color: #ce338d;
-    text-decoration: none;
+.donos-item img{
+    width: 25vmin;
+    border-radius: 100vmin;
+}
+
+/*Cadatro Donos*/
+/* Container principal */
+.container-cadastro-dono{
+    margin-top:14vmin;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+.container-dono-list{
+    margin-top:5vmin;
+    display: flex;
+    flex-direction: row;
+}
+  
+  /* Lado esquerdo */
+  .left-cadastro-dono{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 10vmin;
+  }
+  
+  .left-cadastro-dono img{
+    width: 80vmin; /* Ajusta imagem */
+    height: auto;
+  }
+  
+  /* Lado direito */
+  /* Estilização do formulário */
+  .form-container-dono{
+    width: 62vmin;
+    border-radius: 4vmin;
+    box-shadow: 0 8px 20px rgba(176, 0, 97, 0.15);
+    background-color: #fcf4fa;
+    padding: 5vmin;
+  }
+  
+  .form-container-dono h1 {
+    color: #e455a8;
+    font-size: 5vmin;
+    margin-bottom: 2.5vmin; /* Reduzir o espaçamento inferior */
+    text-align: center;
     font-weight: bold;
-    margin-top: 10px;
-    display: inline-block;
-    transition: color 0.3s;
-}
-
-.donos-item a:hover {
-    color: #9d2465;
-
-}
+  }
+  
+  .form-container-dono form {
+    display: flex;
+    flex-direction: column;
+    gap: 2vmin; /* Reduz o espaçamento entre os campos */
+  }
+  
+  .form-container-dono input[type="text"],
+  .form-container-dono input[type="date"],
+  .form-container-dono input[type="submit"] {
+    font-weight: bold;
+    color: #847272; /* Cor do texto */
+    font-size: 2vmin;
+    border: 1px solid #e455a8;
+    border-radius: 3vmin;
+    height: 7vmin;
+    padding-left: 2vmin;
+  }
+  
+  .form-container-dono input[type="text"]:focus {
+    border-color: #e455a8;
+    outline: none;
+    box-shadow: 0 0 5px rgba(146, 11, 114, 0.5);
+  }
+  
+  .form-container-dono input[type="date"] {
+  appearance: none; /* Remove estilo padrão */
+  font-size: 16px;
+  border-radius: 30px;
+  margin-left:50vmin ;
+  }
+  
+  .form-container-dono input[type="submit"] {
+    font-size: 2vmin;
+    width: 25vmin;
+    border-radius: 4vmin;
+    background-color: #e455a8;
+    color: white !important; /* Força o texto branco */
+    cursor: pointer;
+  }
+  
+  .form-container-dono input[type="submit"]:hover {
+    background-color: #c60877;
+  }
+  

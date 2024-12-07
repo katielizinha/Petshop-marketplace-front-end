@@ -1,5 +1,6 @@
 import { FormEvent, useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 
 function CadastroDonos() {
@@ -43,17 +44,56 @@ function CadastroDonos() {
         }
     }
 
+    const handleDataChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        let value = e.target.value;
+    
+        // Remove caracteres que não sejam números e reformatar a string
+        value = value.replace(/\D/g, ""); // Apenas números
+    
+        // Aplica a formatação condicionalmente
+        if (value.length > 2 && value.length <= 4) {
+          value = value.replace(/(\d{2})(\d{1,2})/, "$1/$2");
+        } else if (value.length > 4) {
+          value = value.replace(/(\d{2})(\d{2})(\d{1,4})/, "$1/$2/$3");
+        }
+    
+        // Limita o valor ao formato completo dd/mm/yyyy
+        if (value.length > 10) {
+          value = value.substring(0, 10);
+        }
+    
+        setData_cadastro(value);
+      };
 
-    return (
-        <>
-            {/* Mensagem de boas-vindas */}
-            <div className="mensagem">Bem-vindo ao cadastro de Donos!</div>
 
+return (
+    <>
+    <header className="site-header">
+        <div className="cabecalho">
+          <div className="logo">CatShop</div>
+          <nav className="navigation">
+            <ul>
+              <li><a href="#produtos">Produtos</a></li>
+              <li>
+                <Link to="/funcionarios">Funcionários</Link>
+              </li>
+              <li><a href="#contato">Marcar consultas</a></li>
+              <li><Link to="/donos">Donos</Link></li>
+              <li><Link to="/animais">Animais</Link></li>
+            </ul>
+          </nav>
+        </div>
+    </header>
+
+
+        {/* Mensagem de boas-vindas */}
+        <div className="container-cadastro-dono">
+            <h1 className="titulo-donos">Bem-vindo ao cadastro de Donos!</h1> 
 
             {/* Contêiner do formulário e imagem */}
-            <div className="container">
+            <div className="container-dono-list">
                 {/* Lado esquerdo */}
-                <div className="left">
+                <div className="left-cadastro-dono">
                     <img
                         src="https://static.vecteezy.com/system/resources/thumbnails/037/749/711/small_2x/ai-generated-dog-and-cat-on-transparent-background-free-png.png"
                         alt="Ilustração"
@@ -61,8 +101,8 @@ function CadastroDonos() {
                 </div>
 
                 {/* Lado direito */}
-                <div className="right">
-                    <div className="form-container">
+                <div className="right-cadastro-dono">
+                    <div className="form-container-dono">
                         <h1>Cadastro de Donos</h1>
                         <form onSubmit={handleForm}>
                             <input
@@ -94,12 +134,22 @@ function CadastroDonos() {
                                 onChange={(e) => setTelefone(e.target.value)}
                             />
                             <input
-                                type="date"
+                                placeholder="Data de Produção"
+                                type="text"
                                 name="data_cadastro"
                                 id="data_cadastro"
                                 value={data_cadastro}
-                                onChange={(e) => setData_cadastro(e.target.value)}
-                                placeholder="Data de Cadastro"
+                                onChange={handleDataChange}
+                                maxLength={10} // Limita a 10 caracteres
+                                pattern="\d{2}/\d{2}/\d{4}" // Avisa que o formato é dd/mm/yyyy
+                                required
+                                />
+                            <input
+                                placeholder="Nome do PET"
+                                type="text"
+                                name="nomeAnimal"
+                                id="nomeAnimal"
+                                onChange={(e) => setNome(e.target.value)}
                             />
                             <input
                                placeholder="Foto do Dono"
@@ -108,15 +158,14 @@ function CadastroDonos() {
                                id="imagem"
                                onChange={(e) => setImagem(e.target.value)}
                             />
-
-
                             <input type="submit" value="Cadastrar" />
                         </form>
                     </div>
                 </div>
             </div>
-        </>
-    );
+        </div>
+    </>
+);
 }
 
 

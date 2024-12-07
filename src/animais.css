@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
+
+
 /* Página dos Animais */
 .animais-container {
     margin-top: 120px;
@@ -12,7 +16,7 @@
 
 .titulo-animal {
     color: #ce338d;
-    font-size: 55px;
+    font-size: 8vmin;
     font-weight: 700;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }

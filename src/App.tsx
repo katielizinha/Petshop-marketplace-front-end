@@ -74,8 +74,8 @@ function App() {
         </div>
 
         {/* Botão estilizado com Link */}
-        <div className="link-cadastro-container">
-          <Link to="/cadastro-produto" className="link-cadastro">
+        <div className="link-cadastro-produtos-container">
+          <Link to="/cadastro-produto" className="link-cadastro-produtos">
             Cadastrar Produtos
           </Link>
         </div>

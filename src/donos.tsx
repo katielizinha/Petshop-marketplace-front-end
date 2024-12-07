@@ -60,8 +60,8 @@ function Donos() {
         </div> {/* Fechando a div aqui */}
         
         {/* Botão estilizado com Link */}
-        <div className="link-cadastro-container">
-          <Link to="/cadastro-dono" className="link-cadastro">
+        <div className="link-cadastro-donos-container">
+          <Link to="/cadastro-dono" className="link-cadastro-donos">
             Cadastrar Dono
           </Link>
         </div>
