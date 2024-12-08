@@ -1,25 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
 
-
 /* Página dos Donos */
 
-
-
 .donos-container {
-    margin-top: 15vmin;
+  margin-top: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
+    font-family: 'Arial', sans-serif;
 }
 
 .titulo-donos {
-    color: #ce338d;
-    font-size: 8vmin;
-    font-weight: 700;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  color: #ce338d;
+  font-size: 8vmin;
+  font-weight: 700;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
   
 .link-cadastro-donos {
@@ -36,14 +34,15 @@
 
 .link-cadastro-donos:hover {
     background-color: #c60877;
-  }
+}
 
-.donos-list{
+.donos-list {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5vmin;
     margin-bottom: 5vmin;
+    flex-wrap: wrap; /* Permite quebra de linha em telas menores */
 }
 
 .donos-item {
@@ -74,7 +73,67 @@
     color: rgb(58, 58, 58);
 }
 
-.foto-donos{
-  width: 22vmin !important;
-  border-radius: 100% !important; /* Define a imagem como redonda */
+.foto-donos {
+    width: 22vmin !important;
+    border-radius: 100% !important; /* Define a imagem como redonda */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .titulo-donos {
+        font-size: 6vmin; /* Reduz o tamanho do título */
+    }
+
+    .link-cadastro-donos {
+        font-size: 2.5vmin; /* Ajusta o tamanho da fonte */
+        padding: 2.5vmin; /* Reduz o espaçamento */
+    }
+
+    .donos-list {
+        flex-direction: column; /* Empilha os itens verticalmente */
+        gap: 4vmin; /* Reduz o espaço entre os itens */
+    }
+
+    .donos-item {
+        width: 70vmin; /* Ajusta a largura dos itens */
+    }
+
+    .donos-nome {
+        font-size: 3vmin; /* Ajusta o tamanho da fonte */
+    }
+
+    .donos-item p {
+        font-size: 2.3vmin; /* Ajusta o tamanho do texto */
+    }
+
+    .foto-donos {
+        width: 30vmin !important; /* Ajusta o tamanho da imagem */
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo-donos {
+        font-size: 5vmin; /* Mais redução no tamanho do título */
+    }
+
+    .link-cadastro-donos {
+        font-size: 2vmin; /* Ajusta o tamanho da fonte */
+        padding: 2vmin; /* Reduz ainda mais o espaçamento */
+    }
+
+    .donos-item {
+        width: 90%; /* Usa a largura total disponível */
+    }
+
+    .donos-nome {
+        font-size: 2.5vmin; /* Ajusta ainda mais o tamanho da fonte */
+    }
+
+    .donos-item p {
+        font-size: 2vmin; /* Ajusta ainda mais o tamanho do texto */
+    }
+
+    .foto-donos {
+        width: 35vmin !important; /* Ajuste adicional para telas menores */
+    }
 }

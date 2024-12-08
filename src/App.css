@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
 
-/*Parte principal */
-body{
+/* Parte principal */
+body {
   font-family: "Parkinsans", sans-serif;
   font-weight: 600;
   background-color: #ffe0f2;
 }
 
-.logo{
+.logo {
   font-family: "Coiny", system-ui;
   font-size: 4.7vmin;
   font-style: normal;
@@ -16,7 +16,7 @@ body{
   color: #ffffff;
 }
 
-.cabecalho{
+.cabecalho {
   background-color: #e455a8;
   display: flex;
   flex-direction: row;
@@ -29,18 +29,18 @@ body{
   z-index: 1000; 
 }
 
-.cabecalho ul{
+.cabecalho ul {
   display: flex;
   flex-direction: row;
   margin-left: 55vmin;
 }
 
-.cabecalho li{
+.cabecalho li {
   margin: 2vmin;
   list-style-type: none;
 }
 
-.cabecalho li a{
+.cabecalho li a {
   color: white;
   font-weight: 500;
   font-size: 3vmin;
@@ -51,28 +51,16 @@ body{
   color: white;
 }
 
-/*Produtos*/
-/*Regulando os quadros*/
-@media (max-width: 768px) {
-    .produtos-list {
-      grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas menores */
-    }
-  }
-  
-@media (max-width: 480px) {
-  .produtos-list {
-    grid-template-columns: repeat(1, 1fr); /* 1 coluna em telas muito pequenas */
-  }
-}
-
-/*Página que mostra os produtos*/
+/* Produtos */
+/* Ajusta o espaçamento para o conteúdo abaixo do cabeçalho */
 .produtos-container {
-  margin-top: 15vmin;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
 }
 
 .titulo-produto {
@@ -81,7 +69,6 @@ body{
   font-weight: 700;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
-
 
 .produtos-list {
   display: grid;
@@ -93,19 +80,18 @@ body{
 
 .produto-item {
   display: flex;
-  flex-direction: column; /* Organiza os itens do produto em coluna */
-  justify-content: space-between; /* Garante espaçamento uniforme */
-  align-items: stretch; /* Faz os elementos ocuparem a largura total */
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
   background-color: #ffffff;
   border: 1px solid #ffffff;
   padding: 15px;
   box-sizing: border-box;
   text-align: center;
-  height: 100%; /* Garante que todos os itens tenham a mesma altura */
-  border-radius: 10px; /* Adiciona bordas arredondadas */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
-
 }
 
 .produto-item:hover {
@@ -116,47 +102,46 @@ body{
 .container-imagem img {
   width: 23vmin;
   height: auto;
-  object-fit: contain; /* Garante que a imagem se ajuste ao container */
+  object-fit: contain;
+}
+
+.produto-nome, .produto-descricao, .produto-data_producao {
+  text-align: left;
 }
 
 .produto-nome {
-  font-size: 3vmin; 
-  text-align: left;
+  font-size: 3vmin;
   font-weight: bold;
   color: #333;
   margin-bottom: 1vmin;
 }
 
 .produto-descricao {
-  font-size: 2.3vmin; /* Tamanho ajustado */
-  text-align: left;
-  color: #555; /* Cor mais escura para maior contraste */
+  font-size: 2.3vmin;
+  color: #555;
   margin-bottom: 2vmin;
 }
 
 .produto-data_producao {
-  font-size: 2vmin; /* Tamanho consistente com a descrição */
-  text-align: left;
-  color: #999; /* Cor mais clara para destacar menos */
+  font-size: 2vmin;
+  color: #999;
   margin-bottom: 15px;
 }
 
-/* Estilizar preço e botão lado a lado */
 .produto-preco-botao {
   display: flex;
-  justify-content: space-between; /* Espaça o preço e o botão lado a lado */
-  align-items: center; /* Alinha verticalmente */
-  margin-top: auto; /* Empurra o bloco para o final do contêiner */
-
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
 }
 
 .produto-preco {
-  font-size: 3vmin; /* Tamanho menor do preço */
+  font-size: 3vmin;
   font-weight: bold;
   color: #e455a8;
 }
 
-.botao-comprar{
+.botao-comprar {
   padding: 1.5vmin;
   font-size: 3vmin;
   border-radius: 10px;
@@ -171,7 +156,7 @@ body{
   background-color: #c60877;
 }
 
-.link-cadastro-produtos-container { 
+.link-cadastro-produtos-container {
   margin-top: 7vmin;
 }
 
@@ -179,15 +164,75 @@ body{
   font-size: 3vmin;
   border-radius: 2vmin;
   background-color: #e455a8;
-  color: white !important; /* Força o texto branco */
+  color: white !important;
   cursor: pointer;
   padding: 3vmin;
   display: block;
   text-decoration: none;
-  text-align: center; /* Centraliza o texto */
+  text-align: center;
 }
 
 .link-cadastro-produtos:hover {
   background-color: #c60877;
 }
 
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .cabecalho ul {
+    margin-left: 0;
+    flex-wrap: wrap;
+  }
+
+  .cabecalho li {
+    margin: 1.5vmin;
+  }
+
+  .titulo-produto {
+    font-size: 6vmin;
+  }
+
+  .produtos-list {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
+    width: 100%; /* Adapta a largura */
+  }
+
+  .produto-item {
+    padding: 10px;
+  }
+
+  .produto-nome, .produto-descricao, .produto-data_producao, .produto-preco {
+    font-size: 2.5vmin;
+  }
+
+  .botao-comprar {
+    font-size: 2.5vmin;
+  }
+
+  .link-cadastro-produtos {
+    font-size: 2.5vmin;
+    padding: 2vmin;
+  }
+}
+
+@media (max-width: 480px) {
+  .titulo-produto {
+    font-size: 5vmin;
+  }
+
+  .produtos-list {
+    grid-template-columns: repeat(1, 1fr); /* 1 coluna em smartphones */
+  }
+
+  .produto-nome, .produto-descricao, .produto-data_producao, .produto-preco {
+    font-size: 2vmin;
+  }
+
+  .botao-comprar {
+    font-size: 2vmin;
+  }
+
+  .link-cadastro-produtos {
+    font-size: 2vmin;
+    padding: 1.5vmin;
+  }
+}
