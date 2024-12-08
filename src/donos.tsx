@@ -15,7 +15,7 @@ function Donos() {
   const [donos, setDonos] = useState<DonosType[]>([])
 
   useEffect(() => {
-    fetch("http://localhost:8000/Donos")
+    fetch("https://petshop-marketplace.onrender.com/Donos")
       .then(resposta => resposta.json())
       .then(dados => setDonos(dados))
   }, [])
@@ -53,7 +53,11 @@ function Donos() {
               <p>Animal: {dono.nomeAnimal}</p>
               <p>CPF: {dono.CPF}</p>
               <p>Telefone:{dono.telefone}</p>
-              <p>Data de Cadastro: {new Date(dono.dataCadastro).toLocaleDateString()}</p>
+              <p className="dono-dataCadastro"> Data Cadastro:  {new Date(dono.dataCadastro).toLocaleDateString("pt-BR", {
+                  day: "2-digit",
+                  month: "2-digit",
+                  year: "numeric",
+                })}</p>
             </div>
             ))
         }  

@@ -3,17 +3,18 @@ import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import FuncionariosApp from './funcionarios.tsx'
 import Donos from './donos.tsx'
-import CadastroDonos from './componentes/petshopProduto/CadastroDonos.tsx'
+import AnimaisApp from './animais.tsx'
 import ConsultaApp from './consulta.tsx'
+import CadastroDonos from './componentes/petshopProduto/CadastroDonos.tsx'
+
 import './index.css'
-
-
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
 import CadastroProduto from './componentes/petshopProduto/CadastroProduto.tsx';
-import AnimaisApp from './animais.tsx'
+
+
 const router = createBrowserRouter([
   {
     path: "/",

@@ -13,8 +13,10 @@ function CadastroProduto() {
 
   const handleForm = async (event: FormEvent) => {
     event.preventDefault();
+   // Converte a data para o formato yyyy-mm-dd
+      const dataProducaoFormatada = data_producao.split('/').reverse().join('-');
     try {
-      const resposta = await fetch("http://localhost:8000/produtos", {
+      const resposta = await fetch("https://petshop-marketplace.onrender.com/produtos", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -24,7 +26,7 @@ function CadastroProduto() {
           nome: nome,
           descricao: descricao,
           preco: preco,
-          data_producao: data_producao,
+          data_producao: dataProducaoFormatada,
           imagem: imagem
         })
       });
@@ -35,7 +37,7 @@ function CadastroProduto() {
         const mensagem = await resposta.text();
         alert("Erro ao Cadastrar Produto - Error: " + mensagem);
       }
-    } catch (e) {
+    } catch(e){
       alert("Servidor não está respondendo.");
     }
   };
@@ -64,24 +66,20 @@ function CadastroProduto() {
   return (
     <>
       <header className="site-header">
-        <div className="cabecalho">
-          <div className="logo">CatShop</div>
-          <nav className="navigation">
-            <ul>
-            <li>
-                <Link to="/produtos">Produtos</Link>
-              </li>
-              <li>
-                <Link to="/funcionarios">Funcionários</Link>
-              </li>
-              <li>
-                <Link to="/consulta">Marcar consultas</Link>
-              </li>
-              <li><Link to="/donos">Donos</Link></li>
-              <li><Link to="/animais">Animais</Link></li>
-            </ul>
-          </nav>
-        </div>
+          <div className="cabecalho"> 
+            <div className="logo">CatShop</div>
+            <nav className="navigation">
+              <ul>
+              <li><Link to="/produtos">Produtos</Link></li>
+                <li>
+                    <Link to="/funcionarios">Funcionários</Link>  {/**No lugar do "a href" use o componente LINK */}
+                </li>
+                <li><Link to="/consulta">Marcar Consultas</Link></li>
+                <li><Link to="/donos">Donos</Link></li>
+                <li><Link to="/animais">Animais</Link></li>
+              </ul>
+            </nav>
+          </div>
       </header>
 
       

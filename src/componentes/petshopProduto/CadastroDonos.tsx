@@ -2,31 +2,32 @@ import { FormEvent, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { Link } from "react-router-dom";
 
-
 function CadastroDonos() {
     const navigate = useNavigate();
     const [id, setId] = useState("");
-    const [nome, setNome] = useState("");
+    const [nomeDono, setNomeDono] = useState("");
+    const [nomeAnimal, setNomeAnimal] = useState("");
     const [cpf, setCpf] = useState("");
     const [telefone, setTelefone] = useState("");
-    const [data_cadastro, setData_cadastro] = useState("");
+    const [dataCadastro, setDataCadastro] = useState("");
     const [imagem, setImagem] = useState("");
-
 
     async function handleForm(event: FormEvent) {
         event.preventDefault();
+        const dataProducaoFormatada = dataCadastro.split('/').reverse().join('-');
         try {
-            const resposta = await fetch("http://localhost:8000/donos", {
+            const resposta = await fetch("https://petshop-marketplace.onrender.com/donos", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
                     id: id,
-                    nome: nome,
+                    nomeDono: nomeDono,
+                    nomeAnimal: nomeAnimal,
                     cpf: cpf,
                     telefone: telefone,
-                    data_cadastro: data_cadastro,
+                    dataCadastro: dataProducaoFormatada,
                     imagem: imagem,
                 })
             });
@@ -34,7 +35,7 @@ function CadastroDonos() {
 
             if (resposta.status !== 500) {
                 alert("Dono cadastrado com sucesso!");
-                navigate("/");
+                navigate("/donos");
             } else {
                 const mensagem = await resposta.text();
                 alert("Erro ao cadastrar dono - Erro: " + mensagem);
@@ -62,28 +63,28 @@ function CadastroDonos() {
           value = value.substring(0, 10);
         }
     
-        setData_cadastro(value);
+        setDataCadastro(value);
       };
 
 
 return (
     <>
     <header className="site-header">
-        <div className="cabecalho">
-          <div className="logo">CatShop</div>
-          <nav className="navigation">
-            <ul>
-              <li><a href="#produtos">Produtos</a></li>
-              <li>
-                <Link to="/funcionarios">Funcionários</Link>
-              </li>
-              <li><a href="#contato">Marcar consultas</a></li>
-              <li><Link to="/donos">Donos</Link></li>
-              <li><Link to="/animais">Animais</Link></li>
-            </ul>
-          </nav>
-        </div>
-    </header>
+          <div className="cabecalho"> 
+            <div className="logo">CatShop</div>
+            <nav className="navigation">
+              <ul>
+              <li><Link to="/produtos">Produtos</Link></li>
+                <li>
+                    <Link to="/funcionarios">Funcionários</Link>  {/**No lugar do "a href" use o componente LINK */}
+                </li>
+                <li><Link to="/consulta">Marcar Consultas</Link></li>
+                <li><Link to="/donos">Donos</Link></li>
+                <li><Link to="/animais">Animais</Link></li>
+              </ul>
+            </nav>
+          </div>
+      </header>
 
 
         {/* Mensagem de boas-vindas */}
@@ -113,11 +114,11 @@ return (
                                 onChange={(e) => setId(e.target.value)}
                             />
                             <input
-                                placeholder="Nome"
+                                placeholder="Nome do dono"
                                 type="text"
-                                name="nome"
-                                id="nome"
-                                onChange={(e) => setNome(e.target.value)}
+                                name="nomeDono"
+                                id="nomeDono"
+                                onChange={(e) => setNomeDono(e.target.value)}
                             />
                             <input
                                 placeholder="CPF"
@@ -138,7 +139,7 @@ return (
                                 type="text"
                                 name="data_cadastro"
                                 id="data_cadastro"
-                                value={data_cadastro}
+                                value={dataCadastro}
                                 onChange={handleDataChange}
                                 maxLength={10} // Limita a 10 caracteres
                                 pattern="\d{2}/\d{2}/\d{4}" // Avisa que o formato é dd/mm/yyyy
@@ -149,7 +150,7 @@ return (
                                 type="text"
                                 name="nomeAnimal"
                                 id="nomeAnimal"
-                                onChange={(e) => setNome(e.target.value)}
+                                onChange={(e) => setNomeAnimal(e.target.value)}
                             />
                             <input
                                placeholder="Foto do Dono"

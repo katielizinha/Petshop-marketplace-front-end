@@ -19,7 +19,7 @@ function FuncionariosApp() {
   // useEffect para carregar produtos e usuários
   useEffect(() => {
       // Buscar os funcionarios
-    fetch("http://localhost:8000/funcionarios")
+    fetch("https://petshop-marketplace.onrender.com/funcionarios")
     .then(resposta => resposta.json())
     .then(dados => setFuncionarios(dados))
   }, [])

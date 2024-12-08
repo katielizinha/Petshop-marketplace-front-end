@@ -22,7 +22,7 @@ function App() {
   // useEffect para carregar produtos e usuários
   useEffect(() => {
   // Buscar os produtos
-    fetch("http://localhost:8000/produtos")
+    fetch("https://petshop-marketplace.onrender.com/produtos")
       .then(resposta => resposta.json())
       .then(dados => setProdutos(dados))
   }, [])

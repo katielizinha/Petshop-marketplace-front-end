@@ -22,7 +22,7 @@ function AnimaisApp() {
   // useEffect para carregar os animais
   useEffect(() => {
       // Buscar os animais
-    fetch("http://localhost:8000/animais")
+    fetch("https://petshop-marketplace.onrender.com/animais")
     .then(resposta => resposta.json())
     .then(dados => setAnimais(dados))
   }, [])

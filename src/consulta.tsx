@@ -16,7 +16,7 @@ function ConsultaApp() {
 
   useEffect(() => {
       // Buscar consulta
-    fetch("http://localhost:8000/consulta")
+    fetch("https://petshop-marketplace.onrender.com/consulta")
     .then(resposta => resposta.json())
     .then(dados => setConsulta(dados))
   }, [])
@@ -51,7 +51,7 @@ function ConsultaApp() {
                 <h1 className="consulta-tipoConsulta">{consulta.tipoConsulta}</h1>
                 <p className="consulta-nome">Nome paciente: {consulta.nomePaciente}</p> {/* Use h3 para o nome do produto */}
                 <p className="nome-Veterinario"> Nome Médico: {consulta.veterinario}</p>
-                <p className="consulta-dataConsulta">Data consulta: {consulta.dataConsulta}</p>
+                <p className="consulta-dataConsulta">Data consulta:{new Date(consulta.dataConsulta).toLocaleDateString()}</p>
                 <a href='#'>Detalhes do Prontuário</a>
               </div>
             ))
