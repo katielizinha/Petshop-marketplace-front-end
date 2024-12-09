@@ -55,3 +55,5 @@ E as funcionalidades de cadastrar produtos e donos foi dividido igualmente: Cada
 Link do diagrama:
 
 https://lucid.app/lucidchart/2f955a86-b73a-4f6a-ab75-eace642cd60e/edit?viewport_loc=-2505%2C638%2C4039%2C1959%2C0_0&invitationId=inv_918683a5-5be8-4e01-b59d-2e2fb7bdc0ea
+
+![Diagrama em branco](https://github.com/user-attachments/assets/22f8edad-a9d1-4812-82fc-62f210c6ad5a)
