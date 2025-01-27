@@ -27,6 +27,21 @@ function App() {
       .then(dados => setProdutos(dados))
   }, [])
 
+  function handleExcluir(id:number){
+    alert(`Excluir o produto com id ${id}`)
+    fetch(`https://petshop-marketplace.onrender.com/produtos/${id}`, {
+      method: 'DELETE'
+    })
+    .then(resposta=>{
+      if(resposta.status ===200){
+        alert("Produto excluído com sucesso")
+        window.location.reload()
+      }else{
+        alert("Erro ao excluir o produto: Confira o terminal do backend")
+      }
+    })
+  }
+
   return (
     <>
 
@@ -68,6 +83,9 @@ function App() {
               <div className="produto-preco-botao">
                 <span className="produto-preco">R$ {produto.preco}</span>
                 <button className="botao-comprar">Comprar</button>
+              </div>
+              <div>
+              <Link to={`/alterar-produto/${produto.id}`}>Alterar</Link>
               </div>
             </div>
           ))}
