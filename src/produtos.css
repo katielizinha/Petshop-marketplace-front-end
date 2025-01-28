@@ -142,7 +142,7 @@ body {
 }
 
 .botao-comprar {
-  padding: 1.5vmin;
+  padding: 2vmin 2.7vmin 2vmin 2.7vmin;
   font-size: 3vmin;
   border-radius: 10px;
   background-color: #e455a8;
@@ -214,6 +214,7 @@ body {
   }
 }
 
+
 @media (max-width: 480px) {
   .titulo-produto {
     font-size: 5vmin;
@@ -235,4 +236,36 @@ body {
     font-size: 2vmin;
     padding: 1.5vmin;
   }
+}
+
+.botoes-funcao{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2vmin;
+}
+
+.botaoAlterar{
+  font-size: 2.2vmin;
+  padding: 1.8vmin 5vmin 1.8vmin 5vmin;
+  border-radius: 10px;
+  background-color: #ffffff;
+  border: #e455a8 0.3vmin solid;
+  color: #e455a8;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.botaoExcluir{
+  font-size: 2.2vmin;
+  padding: 1.8vmin 5vmin 1.8vmin 5vmin;
+  border-radius: 10px;
+  background-color: #e455a8 ;
+  border: #e455a8 0.3vmin solid;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
 }

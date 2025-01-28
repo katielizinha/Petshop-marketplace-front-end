@@ -67,6 +67,7 @@ function AlterarProduto(){
     }
     return(
         <>
+         <div className="container-alterar-produto">
             <h1>Alterar</h1>
             <form onSubmit={handleForm}>
                 <div>
@@ -98,6 +99,8 @@ function AlterarProduto(){
                     <input type="submit" value="Alterar" />
                 </div>
             </form>
+          </div>
+           
         </>
     )
 }

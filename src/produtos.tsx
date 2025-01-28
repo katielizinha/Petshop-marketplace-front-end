@@ -84,10 +84,10 @@ function Produto() {
                 <span className="produto-preco">R$ {produto.preco}</span>
                 <button className="botao-comprar">Comprar</button>
               </div>
-              <div>
-              <Link to={`/alterar-produto/${produto.id}`}>Alterar</Link>
+              <div className="botoes-funcao">
+              <Link className="botaoAlterar" to={`/alterar-produto/${produto.id}`}>Alterar</Link>
+              <button className="botaoExcluir" onClick={() => handleExcluir(produto.id)}>Excluir</button>
               </div>
-              <button onClick={() => handleExcluir(produto.id)}>Excluir</button>
             </div>
           ))}
         </div>

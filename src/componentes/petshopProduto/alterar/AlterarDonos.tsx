@@ -25,7 +25,7 @@ function AlterarDonos(){
     async function handleForm(event:FormEvent){
         event.preventDefault()
         try{
-            const resposta = await fetch(`https://petshop-marketplace.onrender.com/donos/${id}`,{
+            const resposta = await fetch(`https://petshop-marketplace.onrender.com/produtos/${id}`,{
                 method:"PUT",
                 headers:{
                     "Content-Type":"application/json"
@@ -51,7 +51,7 @@ function AlterarDonos(){
         catch(e){
             alert("Servidor não está respondendo.")
         }
-        
+       
     }
     function handleNomeDono(event:ChangeEvent<HTMLInputElement>){
         setNomeDono(event.target.value)
@@ -71,49 +71,47 @@ function AlterarDonos(){
     function handleImagem(event:ChangeEvent<HTMLInputElement>){
         setImagem(event.target.value)
     }
-
-return (
-    <>
-    <h1>Alterar</h1>
-    <form onSubmit={handleForm}>
-        <div>
-        <label htmlFor="nomedono"></label>
-        <input placeholder="Nome do Dono" type="text" name="nomedono" id="nomedono" value={nomedono} onChange={handleNomeDono}  />
-        </div>
-
-        <div>
-        <label htmlFor="nomeanimal"></label>
-        <input placeholder="Nome do Animal" type="text" name="nomeanimal" id="nomeanimal" value={nomeanimal} onChange={handleNomeAnimal}  />
-        </div>
-
-
-        <div>
-        <label htmlFor="cpf"></label>
-        <input placeholder="cpf" type="text" name="cpf" id="cpf" value={cpf} onChange={handleCPF}  />
-        </div>
-
-        
-        <div>
-        <label htmlFor="telefone"></label>
-        <input placeholder="telefone" type="text" name="telefone" id="telefone" value={telefone} onChange={handleTelefone}  />
-        </div>
-
-        
-        <div>
-        <label htmlFor="Imagem"></label>
-        <input placeholder="Imagem" type="Imagem" name="Imagem" id="Imagem" value={imagem} onChange={handleImagem}  />
-        </div>
-       
-       
-        <div>
-        <label htmlFor="Data Cadastro"></label>
-        <input placeholder="datacadastro" type="datacadastro" name="datacadastro" id="datacadastro" value={datacadastro} onChange={handleDataCadastro}  />
-        </div>
-       
-       
-        <button type="submit">Alterar</button>
-    </form>
-    </>
-);
+   
+    return(
+        <>
+            <h1>Alterar</h1>
+            <form onSubmit={handleForm}>
+                <div>
+                    <label htmlFor="id">Id</label>
+                    <input placeholder="Id" type="text" name="id" id="id" value={id} readOnly/>
+                </div>
+                <div>
+                    <label htmlFor="imagem">URL Imagem</label>
+                    <input placeholder="URL Imagem" type="text" name="imagem" id="imagem" value={imagem} onChange={handleImagem} />
+                    {imagem && <img className="imagem-produto-reduzida" src={imagem} alt="Imagem do Dono" />}
+                </div>
+                <div>
+                    <label htmlFor="nomedono">Nome Dono</label>
+                    <input placeholder="Nome Dono" type="text" name="nomedono" id="nomedono" value={nomedono} onChange={handleNomeDono} />
+                </div>
+                <div>
+                    <label htmlFor="nomeanimal">Nome Animal</label>
+                    <input placeholder="Nome Animal" type="text" name="nomeanimal" id="nomeanimal" value={nomeanimal} onChange={handleNomeAnimal} />
+                </div>
+                <div>
+                    <label htmlFor="cpf">CPF</label>
+                    <input placeholder="CPF" type="text" name="cpf" id="cpf" value={cpf} onChange={handleCPF} />
+                </div>
+                <div>
+                    <label htmlFor="telefone">Telefone</label>
+                    <input placeholder="Telefone" type="text" name="telefone" id="telefone" value={telefone} onChange={handleTelefone} />
+                </div>
+                <div>
+                    <label htmlFor="datacadastro">Data Cadastro</label>
+                    <input placeholder="Data Cadastro" type="text" name="datacadastro" id="datacadastro" value={datacadastro} onChange={handleDataCadastro} />
+                </div>
+                <div>
+                    <input type="submit" value="Alterar" />
+                </div>
+            </form>
+        </>
+    )
 }
+
+
 export default AlterarDonos;

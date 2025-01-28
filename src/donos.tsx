@@ -78,10 +78,10 @@ function Donos() {
                 <div className="dono-detalhes-botao">
                 <span className="dono-nome">Dono: {dono.nomeDono}</span>
                 </div>
-                <div>
-                  <Link to={`/alterar-dono/${dono.id}`}>Alterar</Link>
-                  </div>
-                  <button onClick={() => handleExcluir(dono.id)}>Excluir</button>
+                <div className="botoes-fun">
+              <Link className="botaoAlterar1" to={`/alterar-dono/${dono.id}`}>Alterar</Link>
+              <button className="botaoExcluir1" onClick={() => handleExcluir(dono.id)}>Excluir</button>
+              </div>
             </div>
           ))}
     

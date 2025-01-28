@@ -1,0 +1,106 @@
+/* Container principal - Alterar Produtos */
+.container-cadastro-produto {
+    margin-top: 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+  }
+  
+  .cadastro-produto-list {
+    margin-top: 5vmin;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  /* Lado esquerdo - Cadastro Produtos */
+  .left-cadastro-produto {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 10vmin;
+  }
+  
+  .left-cadastro-produto img {
+    width: 80vmin;
+    height: auto;
+  }
+  
+  /* Lado direito - Cadastro Produtos */
+  .form-container-produto {
+    width: 62vmin;
+    border-radius: 4vmin;
+    box-shadow: 0 8px 20px rgba(176, 0, 97, 0.15);
+    background-color: #fcf4fa;
+    padding: 5vmin;
+  }
+  
+  .form-container-produto h1 {
+    color: #e455a8;
+    font-size: 5vmin;
+    margin-bottom: 2.5vmin;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .form-container-produto form {
+    display: flex;
+    flex-direction: column;
+    gap: 2vmin;
+  }
+  
+  .form-container-produto input[type="text"],
+  .form-container-produto input[type="date"],
+  .form-container-produto input[type="submit"] {
+    font-weight: bold;
+    color: #847272;
+    font-size: 2vmin;
+    border: 1px solid #e455a8;
+    border-radius: 3vmin;
+    height: 7vmin;
+    padding-left: 2vmin;
+  }
+  
+  .form-container-produto input[type="text"]:focus {
+    border-color: #e455a8;
+    outline: none;
+    box-shadow: 0 0 5px rgba(146, 11, 114, 0.5);
+  }
+  
+  .form-container-produto input[type="submit"] {
+    font-size: 2vmin;
+    width: 30vmin;
+    height: 6vmin;
+    border-radius: 3vmin;
+    background-color: #e455a8;
+    color: white !important;
+    cursor: pointer;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+  }
+  
+  .form-container-produto input[type="submit"]:hover {
+    background-color: #c60877;
+  }
+  
+  /* Responsividade - Cadastro Produtos */
+  @media (max-width: 768px) {
+    .cadastro-produto-list {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .left-cadastro-produto img {
+      width: 90%;
+      margin-bottom: 2vmin;
+    }
+  
+    .form-container-produto {
+      width: 90%;
+      padding: 4vmin;
+    }
+  }
+  
