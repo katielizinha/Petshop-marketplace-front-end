@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './App.tsx'
+import Produto from './produtos.tsx'
 import FuncionariosApp from './funcionarios.tsx'
 import Donos from './donos.tsx'
 import AnimaisApp from './animais.tsx'
@@ -15,12 +15,13 @@ import {
 import CadastroProduto from './componentes/petshopProduto/cadastro/CadastroProduto.tsx'
 import Header from './componentes/header/Header.tsx';
 import AlterarProduto from './componentes/petshopProduto/alterar/AlterarProduto.tsx';
+import AlterarDonos from './componentes/petshopProduto/alterar/AlterarDonos.tsx'
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
+    element: <Produto/>,
   },
   {
     path: "/cadastro-produto",
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/produtos",
-    element: <App/>,
+    element: <Produto/>,
   },
   {path: "/donos",
     element: <Donos/>
@@ -51,7 +52,10 @@ const router = createBrowserRouter([
   },
   {
     path: "/alterar-produto/:id",
-    element: <><Header/><AlterarProduto/></>,
+    element: <><Header/><AlterarProduto/></>
+  },
+  {path: "/alterar-donos/:id",
+    element: <><Header/><AlterarDonos/></>
   },
 ]);
 

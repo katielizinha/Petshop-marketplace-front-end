@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import './App.css'
+import './produtos.css'
 import { Link } from "react-router-dom";
 
 // Tipo para produto
@@ -14,7 +14,7 @@ type ProdutoType = {
 }
 
 
-function App() {
+function Produto() {
   const [produtos, setProdutos] = useState<ProdutoType[]>([])
 
  
@@ -87,6 +87,7 @@ function App() {
               <div>
               <Link to={`/alterar-produto/${produto.id}`}>Alterar</Link>
               </div>
+              <button onClick={() => handleExcluir(produto.id)}>Excluir</button>
             </div>
           ))}
         </div>
@@ -102,4 +103,4 @@ function App() {
   );
 }
 
-export default App;
+export default Produto;

@@ -8,8 +8,9 @@ function AlterarProduto(){
         .then(resposta=>resposta.json())
         .then(dados=>{
             setNome(dados.nome)
-            setDescricao(dados.descricao)
             setPreco(dados.preco)
+            setDescricao(dados.descricao)
+            setDataproducao(dados.data_producao)
             setImagem(dados.imagem)
         })
     },[])
@@ -17,6 +18,7 @@ function AlterarProduto(){
     const [nome,setNome] = useState("")
     const [descricao,setDescricao] = useState("")
     const [preco,setPreco] = useState("")
+    const [data_producao, setDataproducao] = useState("")
     const [imagem,setImagem] = useState("")
     async function handleForm(event:FormEvent){
         event.preventDefault()
@@ -30,6 +32,7 @@ function AlterarProduto(){
                     nome:nome,
                     descricao:descricao,
                     preco:preco,
+                    data_producao:data_producao,
                     imagem:imagem
                 })
             })
@@ -59,6 +62,9 @@ function AlterarProduto(){
     function handleImagem(event:ChangeEvent<HTMLInputElement>){
         setImagem(event.target.value)
     }
+    function handleDataproducao(event:ChangeEvent<HTMLInputElement>){
+        setDataproducao(event.target.value)
+    }
     return(
         <>
             <h1>Alterar</h1>
@@ -68,21 +74,25 @@ function AlterarProduto(){
                     <input placeholder="Id" type="text" name="id" id="id" value={id} readOnly/>
                 </div>
                 <div>
-                    <label htmlFor="nome">Nome</label>
-                    <input placeholder="Nome" type="text" name="nome" id="nome" value={nome} onChange={handleNome} />
+                    <label htmlFor="imagem">URL Imagem</label>
+                    <input placeholder="URL Imagem" type="text" name="imagem" id="imagem" value={imagem} onChange={handleImagem} />
+                    {imagem && <img className="imagem-produto-reduzida" src={imagem} alt="Imagem do Produto" />}
                 </div>
                 <div>
-                    <label htmlFor="descricao">Descrição</label>
-                    <input placeholder="Descrição" type="text" name="descricao" id="descricao" value={descricao} onChange={handleDescricao} />
+                    <label htmlFor="nome">Nome</label>
+                    <input placeholder="Nome" type="text" name="nome" id="nome" value={nome} onChange={handleNome} />
                 </div>
                 <div>
                     <label htmlFor="preco">Preço</label>
                     <input placeholder="Preço" type="text" name="preco" id="preco" value={preco} onChange={handlePreco} />
                 </div>
                 <div>
-                    <label htmlFor="imagem">URL Imagem</label>
-                    <input placeholder="URL Imagem" type="text" name="imagem" id="imagem" value={imagem} onChange={handleImagem} />
-                    {imagem && <img className="imagem-produto-reduzida" src={imagem} alt="Imagem do Produto" />}
+                    <label htmlFor="descricao">Descrição</label>
+                    <input placeholder="Descrição" type="text" name="descricao" id="descricao" value={descricao} onChange={handleDescricao} />
+                </div>
+                <div>
+                    <label htmlFor="data_producao">Descrição</label>
+                    <input placeholder="Data Produção" type="text" name="data_producao" id="data_producao" value={data_producao} onChange={handleDataproducao} />
                 </div>
                 <div>
                     <input type="submit" value="Alterar" />

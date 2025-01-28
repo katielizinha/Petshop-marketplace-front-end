@@ -14,11 +14,28 @@ type DonosType = {
 function Donos() {
   const [donos, setDonos] = useState<DonosType[]>([])
 
+
   useEffect(() => {
-    fetch("https://petshop-marketplace.onrender.com/Donos")
+    // Buscar os produtos
+    fetch("https://petshop-marketplace.onrender.com/donos")
       .then(resposta => resposta.json())
       .then(dados => setDonos(dados))
-  }, [])
+  },[])
+
+  function handleExcluir(id:number){
+    alert(`Excluir o dono com id ${id}`)
+    fetch(`https://petshop-marketplace.onrender.com/donos/${id}`, {
+      method: 'DELETE'
+    })
+    .then(resposta=>{
+      if(resposta.status ===200){
+        alert("Dono excluído com sucesso")
+        window.location.reload()
+      }else{
+        alert("Erro ao excluir o dono: Confira o terminal do backend")
+      }
+    })
+  }
 
   return (
     <>
@@ -58,9 +75,16 @@ function Donos() {
                   month: "2-digit",
                   year: "numeric",
                 })}</p>
+                <div className="dono-detalhes-botao">
+                <span className="dono-nome">Dono: {dono.nomeDono}</span>
+                </div>
+                <div>
+                  <Link to={`/alterar-dono/${dono.id}`}>Alterar</Link>
+                  </div>
+                  <button onClick={() => handleExcluir(dono.id)}>Excluir</button>
             </div>
-            ))
-        }  
+          ))}
+    
         </div> {/* Fechando a div aqui */}
         
         {/* Botão estilizado com Link */}
