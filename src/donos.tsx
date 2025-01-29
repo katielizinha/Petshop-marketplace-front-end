@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import './donos.css'
 import { Link } from "react-router-dom";
+
 type DonosType = {
     id:number,
     nomeDono:string,
@@ -22,19 +23,19 @@ function Donos() {
       .then(dados => setDonos(dados))
   },[])
 
-  function handleExcluir(id:number){
-    alert(`Excluir o dono com id ${id}`)
+  function handleExcluir(id: number) {
+    alert(`Excluir o dono com id ${id}`);
     fetch(`https://petshop-marketplace.onrender.com/donos/${id}`, {
       method: 'DELETE'
     })
-    .then(resposta=>{
-      if(resposta.status ===200){
-        alert("Dono excluído com sucesso")
-        window.location.reload()
-      }else{
-        alert("Erro ao excluir o dono: Confira o terminal do backend")
-      }
-    })
+      .then(resposta => {
+        if (resposta.status === 200) {
+          alert("Dono excluído com sucesso");
+          window.location.reload();
+        } else {
+          alert("Erro ao excluir o dono: Confira o terminal do backend");
+        }
+      })
   }
 
   return (
@@ -75,12 +76,9 @@ function Donos() {
                   month: "2-digit",
                   year: "numeric",
                 })}</p>
-                <div className="dono-detalhes-botao">
-                <span className="dono-nome">Dono: {dono.nomeDono}</span>
-                </div>
-                <div className="botoes-fun">
-              <Link className="botaoAlterar1" to={`/alterar-dono/${dono.id}`}>Alterar</Link>
-              <button className="botaoExcluir1" onClick={() => handleExcluir(dono.id)}>Excluir</button>
+                <div className="botoes-funcao">
+               <Link className="botaoAlterar" to={`/alterar-donos/${dono.id}`}>Alterar</Link>
+              <button className="botaoExcluir" onClick={() => handleExcluir(dono.id)}>Excluir</button>
               </div>
             </div>
           ))}

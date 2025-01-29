@@ -25,7 +25,7 @@ function AlterarDonos(){
     async function handleForm(event:FormEvent){
         event.preventDefault()
         try{
-            const resposta = await fetch(`https://petshop-marketplace.onrender.com/produtos/${id}`,{
+            const resposta = await fetch(`https://petshop-marketplace.onrender.com/donos/${id}`,{
                 method:"PUT",
                 headers:{
                     "Content-Type":"application/json"
@@ -83,7 +83,7 @@ function AlterarDonos(){
                 <div>
                     <label htmlFor="imagem">URL Imagem</label>
                     <input placeholder="URL Imagem" type="text" name="imagem" id="imagem" value={imagem} onChange={handleImagem} />
-                    {imagem && <img className="imagem-produto-reduzida" src={imagem} alt="Imagem do Dono" />}
+                    {imagem && <img className="imagem-donos-reduzida" src={imagem} alt="Imagem do Dono" />}
                 </div>
                 <div>
                     <label htmlFor="nomedono">Nome Dono</label>
