@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { FormEvent, useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import "./CadastroProdutos.css";
 
 function CadastroProduto() {
   const navigate = useNavigate();

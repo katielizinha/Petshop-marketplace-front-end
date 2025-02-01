@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import { ChangeEvent, FormEvent, useState , useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
+import './AlterarProdutos.css'
+
 function AlterarProduto(){
     const { id } = useParams()
     useEffect(()=>{
@@ -68,37 +70,42 @@ function AlterarProduto(){
     return(
         <>
          <div className="container-alterar-produto">
-            <h1>Alterar</h1>
-            <form onSubmit={handleForm}>
-                <div>
-                    <label htmlFor="id">Id</label>
-                    <input placeholder="Id" type="text" name="id" id="id" value={id} readOnly/>
-                </div>
-                <div>
-                    <label htmlFor="imagem">URL Imagem</label>
-                    <input placeholder="URL Imagem" type="text" name="imagem" id="imagem" value={imagem} onChange={handleImagem} />
-                    {imagem && <img className="imagem-produto-reduzida" src={imagem} alt="Imagem do Produto" />}
-                </div>
-                <div>
-                    <label htmlFor="nome">Nome</label>
-                    <input placeholder="Nome" type="text" name="nome" id="nome" value={nome} onChange={handleNome} />
-                </div>
-                <div>
-                    <label htmlFor="preco">Preço</label>
-                    <input placeholder="Preço" type="text" name="preco" id="preco" value={preco} onChange={handlePreco} />
-                </div>
-                <div>
-                    <label htmlFor="descricao">Descrição</label>
-                    <input placeholder="Descrição" type="text" name="descricao" id="descricao" value={descricao} onChange={handleDescricao} />
-                </div>
-                <div>
-                    <label htmlFor="data_producao">Descrição</label>
-                    <input placeholder="Data Produção" type="text" name="data_producao" id="data_producao" value={data_producao} onChange={handleDataproducao} />
-                </div>
-                <div>
-                    <input type="submit" value="Alterar" />
-                </div>
-            </form>
+            <h1>Alterar Produto</h1>
+            <div className="alterar-produto-list">
+             <div className="form-container-produto-alterar">
+                    <form onSubmit={handleForm}>
+                            <label htmlFor="id"></label>
+                            <input placeholder="Id" type="text" name="id" id="id" value={id} readOnly/>
+                            <div>
+                                <label htmlFor="imagem">URL Imagem</label>
+                                <input placeholder="URL Imagem" type="text" name="imagem" id="imagem" value={imagem} onChange={handleImagem} />
+                                {imagem && <img className="imagem-produto-alterar" src={imagem} alt="Imagem do Produto" />}
+                            </div>
+
+                            <div>
+                                <label htmlFor="nome">Nome</label>
+                                <input placeholder="Nome" type="text" name="nome" id="nome" value={nome} onChange={handleNome} />
+                            </div>
+                            <div>
+                                <label htmlFor="preco">Preço</label>
+                                <input placeholder="Preço" type="text" name="preco" id="preco" value={preco} onChange={handlePreco} />
+                            </div>
+                            <div>
+                                <label htmlFor="descricao">Descrição</label>
+                                <input placeholder="Descrição" type="text" name="descricao" id="descricao" value={descricao} onChange={handleDescricao} />
+                            </div>
+                            <div>
+                                <label htmlFor="data_producao">Descrição</label>
+                                <input placeholder="Data Produção" type="text" name="data_producao" id="data_producao" value={data_producao} onChange={handleDataproducao} />
+                            </div>
+                            
+                        <div>
+                            <input type="submit" value="Alterar" />
+                        </div>
+                    
+                    </form>
+              </div>
+            </div>   
           </div>
            
         </>

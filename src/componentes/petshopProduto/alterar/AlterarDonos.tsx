@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { ChangeEvent, FormEvent, useState , useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
+import "./AlterarDonos.css"
 function AlterarDonos(){
     const { id } = useParams()
     useEffect(()=>{
@@ -74,41 +75,47 @@ function AlterarDonos(){
    
     return(
         <>
-            <h1>Alterar</h1>
-            <form onSubmit={handleForm}>
-                <div>
-                    <label htmlFor="id">Id</label>
-                    <input placeholder="Id" type="text" name="id" id="id" value={id} readOnly/>
+            <div className="container-alterar-dono"> 
+                <h1>Alterar Dono</h1>
+                <div className="alterar-dono-list">
+                    <div className="form-container-dono-alterar">
+                        <form onSubmit={handleForm}>
+                            <div>
+                                <label htmlFor="id"></label>
+                                <input placeholder="Id" type="text" name="id" id="id" value={id} readOnly/>
+                            </div>
+                            <div>
+                                <label htmlFor="imagem">URL Imagem</label>
+                                <input placeholder="URL Imagem" type="text" name="imagem" id="imagem" value={imagem} onChange={handleImagem} />
+                                {imagem && <img className="imagem-donos-alterar" src={imagem} alt="Imagem do Dono" />}
+                            </div>
+                            <div>
+                                <label htmlFor="nomedono">Nome Dono</label>
+                                <input placeholder="Nome Dono" type="text" name="nomedono" id="nomedono" value={nomedono} onChange={handleNomeDono} />
+                            </div>
+                            <div>
+                                <label htmlFor="nomeanimal">Nome Animal</label>
+                                <input placeholder="Nome Animal" type="text" name="nomeanimal" id="nomeanimal" value={nomeanimal} onChange={handleNomeAnimal} />
+                            </div>
+                            <div>
+                                <label htmlFor="cpf">CPF</label>
+                                <input placeholder="CPF" type="text" name="cpf" id="cpf" value={cpf} onChange={handleCPF} />
+                            </div>
+                            <div>
+                                <label htmlFor="telefone">Telefone</label>
+                                <input placeholder="Telefone" type="text" name="telefone" id="telefone" value={telefone} onChange={handleTelefone} />
+                            </div>
+                            <div>
+                                <label htmlFor="datacadastro">Data Cadastro</label>
+                                <input placeholder="Data Cadastro" type="text" name="datacadastro" id="datacadastro" value={datacadastro} onChange={handleDataCadastro} />
+                            </div>
+                            <div>
+                                <input type="submit" value="Alterar" />
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div>
-                    <label htmlFor="imagem">URL Imagem</label>
-                    <input placeholder="URL Imagem" type="text" name="imagem" id="imagem" value={imagem} onChange={handleImagem} />
-                    {imagem && <img className="imagem-donos-reduzida" src={imagem} alt="Imagem do Dono" />}
-                </div>
-                <div>
-                    <label htmlFor="nomedono">Nome Dono</label>
-                    <input placeholder="Nome Dono" type="text" name="nomedono" id="nomedono" value={nomedono} onChange={handleNomeDono} />
-                </div>
-                <div>
-                    <label htmlFor="nomeanimal">Nome Animal</label>
-                    <input placeholder="Nome Animal" type="text" name="nomeanimal" id="nomeanimal" value={nomeanimal} onChange={handleNomeAnimal} />
-                </div>
-                <div>
-                    <label htmlFor="cpf">CPF</label>
-                    <input placeholder="CPF" type="text" name="cpf" id="cpf" value={cpf} onChange={handleCPF} />
-                </div>
-                <div>
-                    <label htmlFor="telefone">Telefone</label>
-                    <input placeholder="Telefone" type="text" name="telefone" id="telefone" value={telefone} onChange={handleTelefone} />
-                </div>
-                <div>
-                    <label htmlFor="datacadastro">Data Cadastro</label>
-                    <input placeholder="Data Cadastro" type="text" name="datacadastro" id="datacadastro" value={datacadastro} onChange={handleDataCadastro} />
-                </div>
-                <div>
-                    <input type="submit" value="Alterar" />
-                </div>
-            </form>
+            </div>
         </>
     )
 }

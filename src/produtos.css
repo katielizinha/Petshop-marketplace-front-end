@@ -243,7 +243,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-top: 2vmin;
+  margin: 2vmin;
 }
 
 .botaoAlterar{
@@ -256,16 +256,49 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
   text-decoration: none;
+  margin-right: 2vmin;
 }
 
 .botaoExcluir{
   font-size: 2.2vmin;
   padding: 1.8vmin 5vmin 1.8vmin 5vmin;
-  border-radius: 10px;
+  border-radius: 1.8vmin;
   background-color: #e455a8 ;
   border: #e455a8 0.3vmin solid;
   color: #ffffff;
   cursor: pointer;
   transition: background-color 0.3s ease;
   text-decoration: none;
+}
+
+.botaoAlterar{
+  font-size: 2.2vmin;
+  padding: 1.8vmin 5vmin 1.8vmin 5vmin;
+  border-radius: 1.8vmin;
+  background-color: #ffffff;
+  border: #e455a8 0.3vmin solid;
+  color: #e455a8;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.botaoAlterar:hover {
+  background-color: #ffd7ee; 
+}
+
+.botaoExcluir{
+  font-size: 2.2vmin;
+  padding: 1.8vmin 5vmin 1.8vmin 5vmin;
+  border-radius: 1.8vmin;
+  background-color: #e455a8 ;
+  border: #e455a8 0.3vmin solid;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.botaoExcluir:hover{
+  background-color: #c60877;
 }

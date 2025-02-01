@@ -5,9 +5,7 @@ import FuncionariosApp from './funcionarios.tsx'
 import Donos from './donos.tsx'
 import AnimaisApp from './animais.tsx'
 import ConsultaApp from './consulta.tsx'
-import CadastroDonos from './componentes/petshopProduto/cadastro/CadastroDonos.tsx'
-
-import './index.css'
+import CadastroDonos from './componentes/petshopProduto/cadastro/CadastroDonos.tsx';
 import {
   createBrowserRouter,
   RouterProvider,

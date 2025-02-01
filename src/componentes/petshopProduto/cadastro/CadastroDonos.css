@@ -1,0 +1,107 @@
+/*Cadastro de donos*/
+/* Container principal - Cadastro Donos */
+.container-cadastro-dono {
+    margin-top: 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+  }
+  
+  .container-dono-list {
+    margin-top: 5vmin;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  /* Lado esquerdo - Cadastro Donos */
+  .left-cadastro-dono {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 10vmin;
+  }
+  
+  .left-cadastro-dono img {
+    width: 80vmin;
+    height: auto;
+  }
+  
+  /* Lado direito - Cadastro Donos */
+  .form-container-dono {
+    width: 62vmin;
+    border-radius: 4vmin;
+    box-shadow: 0 8px 20px rgba(176, 0, 97, 0.15);
+    background-color: #fcf4fa;
+    padding: 5vmin;
+  }
+  
+  .form-container-dono h1 {
+    color: #e455a8;
+    font-size: 5vmin;
+    margin-bottom: 2.5vmin;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .form-container-dono form {
+    display: flex;
+    flex-direction: column;
+    gap: 2vmin;
+  }
+  
+  .form-container-dono input[type="text"],
+  .form-container-dono input[type="date"],
+  .form-container-dono input[type="submit"] {
+    font-weight: bold;
+    color: #847272;
+    font-size: 2vmin;
+    border: 1px solid #e455a8;
+    border-radius: 3vmin;
+    height: 7vmin;
+    padding-left: 2vmin;
+  }
+  
+  .form-container-dono input[type="text"]:focus {
+    border-color: #e455a8;
+    outline: none;
+    box-shadow: 0 0 5px rgba(146, 11, 114, 0.5);
+  }
+  
+  .form-container-dono input[type="submit"] {
+    font-size: 2vmin;
+    width: 30vmin;
+    height: 6vmin;
+    border-radius: 3vmin;
+    background-color: #e455a8;
+    color: white !important;
+    cursor: pointer;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+  }
+  
+  .form-container-dono input[type="submit"]:hover {
+    background-color: #c60877;
+  }
+  
+  /* Responsividade - Cadastro Donos */
+  @media (max-width: 768px) {
+    .container-dono-list {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .left-cadastro-dono img {
+      width: 90%;
+      margin-bottom: 2vmin;
+    }
+  
+    .form-container-dono {
+      width: 90%;
+      padding: 4vmin;
+    }
+  }
+  
