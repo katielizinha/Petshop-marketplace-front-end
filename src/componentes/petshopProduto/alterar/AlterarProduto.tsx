@@ -5,23 +5,29 @@ import './AlterarProdutos.css'
 
 function AlterarProduto(){
     const { id } = useParams()
-    useEffect(()=>{
+    useEffect(() => {
         fetch(`https://petshop-marketplace.onrender.com/produtos/${id}`)
-        .then(resposta=>resposta.json())
-        .then(dados=>{
-            setNome(dados.nome)
-            setPreco(dados.preco)
-            setDescricao(dados.descricao)
-            setDataproducao(dados.data_producao)
-            setImagem(dados.imagem)
-        })
-    },[])
+            .then(resposta => resposta.json())
+            .then(dados => {
+                setNome(dados.nome)
+                setPreco(dados.preco)
+                setDescricao(dados.descricao)
+                
+                // Formatar a data para 'yyyy-mm-dd'
+                const dataFormatada = new Date(dados.data_producao).toISOString().split('T')[0];
+                setDataproducao(dataFormatada)
+    
+                setImagem(dados.imagem)
+            })
+    }, [])  // Adicionei id como dependência para garantir que o efeito seja executado toda vez que o id mudar
+    
     const navigate = useNavigate()
     const [nome,setNome] = useState("")
     const [descricao,setDescricao] = useState("")
     const [preco,setPreco] = useState("")
     const [data_producao, setDataproducao] = useState("")
     const [imagem,setImagem] = useState("")
+
     async function handleForm(event:FormEvent){
         event.preventDefault()
         try{
@@ -50,7 +56,7 @@ function AlterarProduto(){
         catch(e){
             alert("Servidor não está respondendo.")
         }
-        
+       
     }
     function handleNome(event:ChangeEvent<HTMLInputElement>){
         setNome(event.target.value)
@@ -82,6 +88,7 @@ function AlterarProduto(){
                                 {imagem && <img className="imagem-produto-alterar" src={imagem} alt="Imagem do Produto" />}
                             </div>
 
+
                             <div>
                                 <label htmlFor="nome">Nome</label>
                                 <input placeholder="Nome" type="text" name="nome" id="nome" value={nome} onChange={handleNome} />
@@ -95,21 +102,22 @@ function AlterarProduto(){
                                 <input placeholder="Descrição" type="text" name="descricao" id="descricao" value={descricao} onChange={handleDescricao} />
                             </div>
                             <div>
-                                <label htmlFor="data_producao">Descrição</label>
-                                <input placeholder="Data Produção" type="text" name="data_producao" id="data_producao" value={data_producao} onChange={handleDataproducao} />
+                                <label htmlFor="data_producao">Data de Produção</label>
+                                <input placeholder="Data Produção" type="date" name="data_producao" id="data_producao" value={data_producao} onChange={handleDataproducao} />
                             </div>
-                            
+                           
                         <div>
                             <input type="submit" value="Alterar" />
                         </div>
-                    
+                   
                     </form>
               </div>
-            </div>   
+            </div>  
           </div>
            
         </>
     )
 }
+
 
 export default AlterarProduto;

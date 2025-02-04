@@ -71,11 +71,17 @@ function Donos() {
               <p>Animal: {dono.nomeAnimal}</p>
               <p>CPF: {dono.CPF}</p>
               <p>Telefone:{dono.telefone}</p>
-              <p className="dono-dataCadastro"> Data Cadastro:  {new Date(dono.dataCadastro).toLocaleDateString("pt-BR", {
-                  day: "2-digit",
-                  month: "2-digit",
-                  year: "numeric",
-                })}</p>
+              <p className="dono-dataCadastro"> Data Cadastro: {/* Formatação da data */}
+             {(() => {
+               const data = new Date(dono.dataCadastro);
+               data.setMinutes(data.getMinutes() + data.getTimezoneOffset()); // Ajusta a data para o fuso horário local
+               return data.toLocaleDateString("pt-BR", {
+               day: "2-digit",
+               month: "2-digit",
+               year: "numeric",
+             });
+          })()}
+         </p>
                 <div className="botoes-funcao">
                <Link className="botaoAlterar" to={`/alterar-donos/${dono.id}`}>Alterar</Link>
               <button className="botaoExcluir" onClick={() => handleExcluir(dono.id)}>Excluir</button>

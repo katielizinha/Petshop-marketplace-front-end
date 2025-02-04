@@ -73,12 +73,19 @@ function Produto() {
               <h3 className="produto-nome">{produto.nome}</h3>
               <p className="produto-descricao">{produto.descricao}</p>
               <p className="produto-data_producao">
-                {/* Formatação da data */}
-                {new Date(produto.data_producao).toLocaleDateString("pt-BR", {
-                  day: "2-digit",
-                  month: "2-digit",
-                  year: "numeric",
-                })}
+              <p className="produto-data_producao">
+  {/* Formatação da data */}
+  {(() => {
+    const data = new Date(produto.data_producao);
+    data.setMinutes(data.getMinutes() + data.getTimezoneOffset()); // Ajusta a data para o fuso horário local
+    return data.toLocaleDateString("pt-BR", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    });
+  })()}
+</p>
+
               </p>
               <div className="produto-preco-botao">
                 <span className="produto-preco">R$ {produto.preco}</span>
