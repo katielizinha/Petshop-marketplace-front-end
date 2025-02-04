@@ -51,7 +51,7 @@ id BIGINT primary key auto_increment,
     veterinario VARCHAR(50)
  
 E as funcionalidades de cadastrar produtos e donos foi dividido igualmente: Cadastrar donos - Katiely, Narriane e Nicolle; Cadastrar produtos - Tainara e Clara
-
+As funcionalidades Alterar e Excluir produtos foram feitas pela Tainara e Clara, e a de excluir e alterar donos pela Katiely, Nicolle S. e Narriane - As funcionalidades consistem em excluir o item e alterar determinados dados da função especifica
 Link do diagrama:
 
 https://lucid.app/lucidchart/2f955a86-b73a-4f6a-ab75-eace642cd60e/edit?viewport_loc=-2505%2C638%2C4039%2C1959%2C0_0&invitationId=inv_918683a5-5be8-4e01-b59d-2e2fb7bdc0ea
